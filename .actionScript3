@@ -1,0 +1,2926 @@
+stop();
+
+
+
+//Объявляю переменные
+// Основные элементы
+//Объявляю меню
+
+var menu:glMenu = new glMenu();
+
+//Объявляю фоновые ячейки
+
+var m_NA2:menu_NotAct2 = new menu_NotAct2();
+var m_NA3:menu_NotAct3 = new menu_NotAct3();
+var m_NA4:menu_NotAct4 = new menu_NotAct4();
+var m_NA5:menu_NotAct5 = new menu_NotAct5();
+var m_NA6:menu_NotAct6 = new menu_NotAct6();
+var m_NA7:menu_NotAct7 = new menu_NotAct7();
+var m_NA8:menu_NotAct8 = new menu_NotAct8();
+var m_NA9:menu_NotAct9 = new menu_NotAct9();
+var m_NA10:menu_NotAct10 = new menu_NotAct10();
+var m_NA11:menu_NotAct11 = new menu_NotAct11();
+var m_NA12:menu_NotAct12 = new menu_NotAct12();
+
+//Объявляю неактивные ячейки
+
+var m_A1:menu_Act1 = new menu_Act1();
+var m_A2:menu_Act2 = new menu_Act2();
+var m_A3:menu_Act3 = new menu_Act3();
+var m_A4:menu_Act4 = new menu_Act4();
+var m_A5:menu_Act5 = new menu_Act5();
+var m_A6:menu_Act6 = new menu_Act6();
+var m_A7:menu_Act7 = new menu_Act7();
+var m_A8:menu_Act8 = new menu_Act8();
+var m_A9:menu_Act9 = new menu_Act9();
+var m_A10:menu_Act10 = new menu_Act10();
+var m_A11:menu_Act11 = new menu_Act11();
+var m_A12:menu_Act12 = new menu_Act12();
+
+//Объявляю активные ячейки
+
+var m_F1:menu_Fin1 = new menu_Fin1();
+var m_F2:menu_Fin2 = new menu_Fin2();
+var m_F3:menu_Fin3 = new menu_Fin3();
+var m_F4:menu_Fin4 = new menu_Fin4();
+var m_F5:menu_Fin5 = new menu_Fin5();
+var m_F6:menu_Fin6 = new menu_Fin6();
+var m_F7:menu_Fin7 = new menu_Fin7();
+var m_F8:menu_Fin8 = new menu_Fin8();
+var m_F9:menu_Fin9 = new menu_Fin9();
+var m_F10:menu_Fin10 = new menu_Fin10();
+var m_F11:menu_Fin11 = new menu_Fin11();
+var m_F12:menu_Fin12 = new menu_Fin12();
+
+//Объявляю серые рамки
+
+var m_rg1:menu_RamkaGreyVert1 = new menu_RamkaGreyVert1();
+var m_rg2:menu_RamkaGreyGoriz2 = new menu_RamkaGreyGoriz2();
+var m_rg3:menu_RamkaGreyGoriz3 = new menu_RamkaGreyGoriz3();
+var m_rg4:menu_RamkaGreyTop = new menu_RamkaGreyTop();
+var m_rg5:menu_RamkaGreyVert5 = new menu_RamkaGreyVert5();
+var m_rg6:menu_RamkaGreyVert6 = new menu_RamkaGreyVert6();
+var m_rg7:menu_RamkaGreyVert7 = new menu_RamkaGreyVert7();
+var m_rg8:menu_RamkaGreyVert8 = new menu_RamkaGreyVert8();
+var m_rg9:menu_RamkaGreyDown = new menu_RamkaGreyDown();
+
+//Объявляю золотые рамки
+
+var m_rgd1:menu_RamkaGoldVert1 = new menu_RamkaGoldVert1();
+var m_rgd2:menu_RamkaGoldGoriz2 = new menu_RamkaGoldGoriz2();
+var m_rgd3:menu_RamkaGoldGoriz3 = new menu_RamkaGoldGoriz3();
+var m_rgd4:menu_RamkaGoldTop = new menu_RamkaGoldTop();
+var m_rgd5:menu_RamkaGoldVert5 = new menu_RamkaGoldVert5();
+var m_rgd6:menu_RamkaGoldVert6 = new menu_RamkaGoldVert6();
+var m_rgd7:menu_RamkaGoldVert7 = new menu_RamkaGoldVert7();
+var m_rgd8:menu_RamkaGoldVert8 = new menu_RamkaGoldVert8();
+var m_rgd9:menu_RamkaGoldDown = new menu_RamkaGoldDown();
+
+// Справка
+
+var spr_CA:Spravka_CelAct = new Spravka_CelAct();
+var spr_CNA:Spravka_CelNotAct = new Spravka_CelNotAct();
+var spr_ex:Spravka_Exit = new Spravka_Exit();
+var spr:Spravka = new Spravka();
+
+//Табло с информацией
+
+var inf1n: Information_1n = new Information_1n();
+var inf1: Information_1 = new Information_1();
+var inf2n: Information_2n = new Information_2n();
+var inf2: Information_2 = new Information_2();
+var inf3: Information_3 = new Information_3();
+var inf3n: Information_3n = new Information_3n();
+var inf4: Information_4 = new Information_4();
+var inf4n: Information_4n = new Information_4n();
+var inf5: Information_5 = new Information_5();
+var inf5n: Information_5n = new Information_5n();
+var inf6: Information_6 = new Information_6();
+var inf6n: Information_6n = new Information_6n();
+var inf7: Information_7 = new Information_7();
+var inf7n: Information_7n = new Information_7n();
+var inf8: Information_8 = new Information_8();
+var inf8n: Information_8n = new Information_8n();
+var inf9: Information_9 = new Information_9();
+var inf9n: Information_9n = new Information_9n();
+var inf10: Information_10 = new Information_10();
+var inf10n: Information_10n = new Information_10n();
+var inf11: Information_11 = new Information_11();
+var inf11n: Information_11n = new Information_11n();
+var inf12: Information_12 = new Information_12();
+var inf12n: Information_12n = new Information_12n();
+
+//Табличка конец игры и кнопки
+
+var te_cont: The_end_continue = new The_end_continue();
+var fon_te: fon_the_end = new fon_the_end();
+var but_te: but_the_end = new but_the_end();
+
+//Задания
+//Задание №1 Цикада
+
+//Объявляю Фон
+
+var fon1:Task1 = new Task1();
+
+//Объявляю кнопки
+
+var t1_num83g:Task1_Number83g = new Task1_Number83g();
+var t1_num83:Task1_Number83 = new Task1_Number83();
+var t1_num648r:Task1_Number648r = new Task1_Number648r();
+var t1_num648:Task1_Number648 = new Task1_Number648();
+var t1_num4g:Task1_Number4g = new Task1_Number4g();
+var t1_num4:Task1_Number4 = new Task1_Number4();
+var t1_num24r:Task1_Number24r = new Task1_Number24r();
+var t1_num24:Task1_Number24 = new Task1_Number24();
+var t1_num19100r:Task1_Number19100r = new Task1_Number19100r();
+var t1_num19100:Task1_Number19100 = new Task1_Number19100();
+var t1_num1000g:Task1_Number1000g = new Task1_Number1000g();
+var t1_num1000:Task1_Number1000 = new Task1_Number1000();
+var t1_num19100f:Task1_Number19100f = new Task1_Number19100f();
+var t1_num24f:Task1_Number24f = new Task1_Number24f();
+var t1_num648f:Task1_Number648f = new Task1_Number648f();
+
+var t1_1:Boolean = false;
+var t1_2:Boolean = false;
+var t1_3:Boolean = false;
+var t1_test1:Number = 0;
+var t1_test2:Number = 0;
+var t1_test3:Number = 0;
+
+var t1_Vic:Task1_Victory = new Task1_Victory();
+
+//Задание "2 Контрольные Станции
+
+var fon2:Task2 = new Task2();
+
+var ks_Active_SPb:Active = new Active();
+var ks_Active_Vorkuta:Active = new Active();
+var ks_Active_Enisejsk:Active = new Active();
+var ks_Active_Ulan:Active = new Active();
+var ks_Active_Jakutsk:Active = new Active();
+var ks_Active_Ussur:Active = new Active();
+var ks_Active_Petr:Active = new Active();
+
+var ks_Spb:Spb = new Spb();
+var ks_Vorkuta:Vorkuta = new Vorkuta();
+var ks_Enisejsk:Enisejsk = new Enisejsk();
+var ks_Ulan:Ulan = new Ulan();
+var ks_Jalutsk:Jalutsk = new Jalutsk();
+var ks_Ussurijsk:Ussurijsk = new Ussurijsk();
+var ks_Petropavlov:Petropavlov = new Petropavlov();
+
+var ks_Num0:Number0 = new Number0();
+var ks_Num1:Number1 = new Number1();
+var ks_Num2:Number2 = new Number2();
+var ks_Num3:Number3 = new Number3();
+var ks_Num4:Number4 = new Number4();
+var ks_Num5:Number5 = new Number5();
+var ks_Num6:Number6 = new Number6();
+var ks_Num7:Number7 = new Number7();
+
+var vic:Number = 7;
+var ks_vic:Task2_Victory = new Task2_Victory();
+var num:Number = 7;
+
+//Задание №3 Центр Управления
+
+//Объявляю фон, кнопки
+
+var fon3:Task3 = new Task3();
+var t3_1r:Task3_Ans1r = new Task3_Ans1r();
+var t3_1:Task3_Ans1 = new Task3_Ans1();
+var t3_2g:Task3_Ans2g = new Task3_Ans2g();
+var t3_2:Task3_Ans2 = new Task3_Ans2();
+var t3_3r:Task3_Ans3r = new Task3_Ans3r();
+var t3_3:Task3_Ans3 = new Task3_Ans3();
+var t3_4r:Task3_Ans4r = new Task3_Ans4r();
+var t3_4:Task3_Ans4 = new Task3_Ans4();
+var t3_Vic:Task3_Victory = new Task3_Victory();
+//___________________________________________________________________________________________
+
+var t3_test1:Number;
+var t3_test3:Number;
+var t3_test4:Number;
+var t3:Boolean;
+
+//Задание №4 Центральный синхронихатор
+
+var fon4:Task4 = new Task4();
+
+var t4_num8r:task4_number8r = new task4_number8r();
+var t4_num8:task4_number8 = new task4_number8();
+var t4_num6r:task4_number6r = new task4_number6r();
+var t4_num6:task4_number6 = new task4_number6();
+var t4_num3g:task4_number3g = new task4_number3g();
+var t4_num3:task4_number3 = new task4_number3();
+var t4_num1r:task4_number1r = new task4_number1r();
+var t4_num1:task4_number1 = new task4_number1();
+
+var t4_test1:Number;
+var t4_test3:Number;
+var t4_test4:Number;
+var t4:Boolean;
+
+var t4_Vic:Task4_Victory = new Task4_Victory();
+
+//Задание №5 Спутник Глонасс
+
+var fon5:Task5 = new Task5();
+
+var t5_smg1:task5_SimvolMalG1 = new task5_SimvolMalG1();
+var t5_smg2:task5_SimvolMalG2 = new task5_SimvolMalG2();
+var t5_smg3:task5_SimvolMalG3 = new task5_SimvolMalG3();
+var t5_smg4:task5_SimvolMalG4 = new task5_SimvolMalG4();
+var t5_smg5:task5_SimvolMalG5 = new task5_SimvolMalG5();
+
+var t5_sg1:task5_SimvolGreen1 = new task5_SimvolGreen1();
+var t5_sg2:task5_SimvolGreen2 = new task5_SimvolGreen2();
+var t5_sg3:task5_SimvolGreen3 = new task5_SimvolGreen3();
+var t5_sg4:task5_SimvolGreen4 = new task5_SimvolGreen4();
+var t5_sg5:task5_SimvolGreen5 = new task5_SimvolGreen5();
+
+var t5_s1:task5_Simvol1 = new task5_Simvol1();
+var t5_s2:task5_Simvol2 = new task5_Simvol2();
+var t5_s3:task5_Simvol3 = new task5_Simvol3();
+var t5_s4:task5_Simvol4 = new task5_Simvol4();
+var t5_s5:task5_Simvol5 = new task5_Simvol5();
+
+var t5_Vic:Number = 0;
+var t5_Vict:Victory = new Victory();
+
+//Задание №6 Глонасс М
+
+var fon6:Task6 = new Task6();
+
+var t6_num75r:Task6_Number75r = new Task6_Number75r();
+var t6_num75:Task6_Number75 = new Task6_Number75();
+var t6_num402r:Task6_Number402r = new Task6_Number402r();
+var t6_num402:Task6_Number402 = new Task6_Number402();
+var t6_num19400g:Task6_Number19400g = new Task6_Number19400g();
+var t6_num19400:Task6_Number19400 = new Task6_Number19400();
+var t6_num1492r:Task6_Number1492r = new Task6_Number1492r();
+var t6_num1492:Task6_Number1492 = new Task6_Number1492();
+
+var t6_Vic:Boolean;
+
+var t6_vict:Task6_Victory = new Task6_Victory();
+
+var t6_not:T6_Neverno = new T6_Neverno();
+var t6_test1:Number;
+var t6_test2:Number;
+var t6_test3:Number;
+
+//Задание №7 Глонасс К
+
+var fon7:Task7 = new Task7();
+
+var t7_ans1r:task7_ans1r = new task7_ans1r();
+var t7_ans1:task7_ans1 = new task7_ans1();
+var t7_ans2r:task7_ans2r = new task7_ans2r();
+var t7_ans2:task7_ans2 = new task7_ans2();
+var t7_ans3r:task7_ans3r = new task7_ans3r();
+var t7_ans3:task7_ans3 = new task7_ans3();
+var t7_ans4g:task7_ans4g = new task7_ans4g();
+var t7_ans4:task7_ans4 = new task7_ans4();
+
+var t7_test1:Number;
+var t7_test2:Number;
+var t7_test3:Number;
+
+var t7_vict:Task7_Victory = new Task7_Victory();
+var t7_Vic:Boolean;
+
+//Задание №8 Наземный сегмент СДКМ
+
+var fon8:Task8 = new Task8();
+
+var t8_1g:Task8_Answer1g = new Task8_Answer1g();
+var t8_1:Task8_Answer1 = new Task8_Answer1();
+var t8_2r:Task8_Answer2r = new Task8_Answer2r();
+var t8_2:Task8_Answer2 = new Task8_Answer2();
+var t8_3r:Task8_Answer3r = new Task8_Answer3r();
+var t8_3:Task8_Answer3 = new Task8_Answer3();
+
+var t8_n:Task8_Neverno = new Task8_Neverno();
+var t8_vict:Task8_Victory = new Task8_Victory();
+
+var t8_test2:Number;
+var t8_test3:Number;
+var t8_Vic:Boolean;
+
+//Задание №9 Космический сегмент СДКМ
+
+var fon9:Task9 = new Task9();
+
+var t9_smg1:task9_SimvolMalG1 = new task9_SimvolMalG1();
+var t9_smg2:task9_SimvolMalG2 = new task9_SimvolMalG2();
+var t9_smg3:task9_SimvolMalG3 = new task9_SimvolMalG3();
+var t9_smg4:task9_SimvolMalG4 = new task9_SimvolMalG4();
+var t9_smg5:task9_SimvolMalG5 = new task9_SimvolMalG5();
+var t9_smg6:task9_SimvolMalG6 = new task9_SimvolMalG6();
+
+var t9_sg1:task9_SimvolGreen1 = new task9_SimvolGreen1();
+var t9_sg2:task9_SimvolGreen2 = new task9_SimvolGreen2();
+var t9_sg3:task9_SimvolGreen3 = new task9_SimvolGreen3();
+var t9_sg4:task9_SimvolGreen4 = new task9_SimvolGreen4();
+var t9_sg5:task9_SimvolGreen5 = new task9_SimvolGreen5();
+var t9_sg6:task9_SimvolGreen6 = new task9_SimvolGreen6();
+
+var t9_s1:task9_Simvol1 = new task9_Simvol1();
+var t9_s2:task9_Simvol2 = new task9_Simvol2();
+var t9_s3:task9_Simvol3 = new task9_Simvol3();
+var t9_s4:task9_Simvol4 = new task9_Simvol4();
+var t9_s5:task9_Simvol5 = new task9_Simvol5();
+var t9_s6:task9_Simvol6 = new task9_Simvol6();
+
+var t9_Vic:Number = 0;
+var t9_Vict:Task9_Victory = new Task9_Victory();
+
+//Задание №10 НАП ВС РФ
+
+var fon10:Task10 = new Task10();
+
+var t10_ans1r:Task10_Answer1r = new Task10_Answer1r();
+var t10_ans1:Task10_Answer1 = new Task10_Answer1();
+var t10_ans2r:Task10_Answer2r = new Task10_Answer2r();
+var t10_ans2:Task10_Answer2 = new Task10_Answer2();
+var t10_ans3g:Task10_Answer3g = new Task10_Answer3g();
+var t10_ans3:Task10_Answer3 = new Task10_Answer3();
+var t10_ans4r:Task10_Answer4r = new Task10_Answer4r();
+var t10_ans4:Task10_Answer4 = new Task10_Answer4();
+
+var t10_vict:Task10_Victory = new Task10_Victory();
+var t10_Vic:Boolean;
+
+var t10_test1:Number;
+var t10_test2:Number;
+var t10_test4:Number;
+
+//Задание №11 НАП Гражданский
+
+var fon11:Task11 = new Task11();
+
+var t11_num1r:task11_num1r = new task11_num1r();
+var t11_num1:task11_num1 = new task11_num1();
+var t11_num2r:task11_num2r = new task11_num2r();
+var t11_num2:task11_num2 = new task11_num2();
+var t11_num3r:task11_num3r = new task11_num3r();
+var t11_num3:task11_num3 = new task11_num3();
+var t11_num4g:task11_num4g = new task11_num4g();
+var t11_num4:task11_num4 = new task11_num4();
+
+var t11_vict:Task11_Victory = new Task11_Victory();
+var t11_Vic:Boolean;
+
+var t11_test1:Number;
+var t11_test2:Number;
+var t11_test3:Number;
+
+//Задание №12 Система Глонасс
+
+var fon12:Task12 = new Task12();
+
+var t12_ans1r:task12_Ans1r = new task12_Ans1r();
+var t12_ans1:task12_Ans1 = new task12_Ans1();
+var t12_ans2g:task12_Ans2g = new task12_Ans2g();
+var t12_ans2:task12_Ans2 = new task12_Ans2();
+
+var t12_vict:Task12_Victory = new Task12_Victory();
+var t12_Vic:Boolean;
+
+var t12_test1:Number;
+//_____________________________________________________________________________________________
+
+//Проверка
+var proverka1:Boolean;
+var proverka2:Boolean;
+var proverka3:Boolean;
+var proverka4:Boolean;
+var proverka5:Boolean;
+var proverka6:Boolean;
+var proverka7:Boolean;
+var proverka8:Boolean;
+var proverka9:Boolean;
+var proverka10:Boolean;
+var proverka11:Boolean;
+var proverka12:Boolean;
+
+
+
+//Задаю координаты
+//координаты основных элементов
+//задаю координаты меню
+
+menu.x=640;
+menu.y=480;
+
+//задаю координаты фоновые ячейки
+
+m_NA2.x=223;
+m_NA2.y=245;
+m_NA3.x=345;
+m_NA3.y=245;
+m_NA4.x=465;
+m_NA4.y=245;
+m_NA5.x=345;
+m_NA5.y=387;
+m_NA6.x=345;
+m_NA6.y=518;
+m_NA7.x=345;
+m_NA7.y=636;
+m_NA8.x=177;
+m_NA8.y=387;
+m_NA9.x=177;
+m_NA9.y=520;
+m_NA10.x=511;
+m_NA10.y=387;
+m_NA11.x=512;
+m_NA11.y=520;
+m_NA12.x=345;
+m_NA12.y=824;
+
+//задаю координаты неактивные ячейки
+
+m_A1.x=345;
+m_A1.y=114;
+m_A2.x=223;
+m_A2.y=245;
+m_A3.x=345;
+m_A3.y=245;
+m_A4.x=465;
+m_A4.y=245;
+m_A5.x=345;
+m_A5.y=387;
+m_A6.x=345;
+m_A6.y=518;
+m_A7.x=345;
+m_A7.y=636;
+m_A8.x=177;
+m_A8.y=387;
+m_A9.x=177;
+m_A9.y=520;
+m_A10.x=511;
+m_A10.y=387;
+m_A11.x=512;
+m_A11.y=520;
+m_A12.x=345;
+m_A12.y=824;
+
+//задаю координаты активные ячейки
+
+m_F1.x=345;
+m_F1.y=114;
+m_F2.x=223;
+m_F2.y=245;
+m_F3.x=345;
+m_F3.y=245;
+m_F4.x=465;
+m_F4.y=245;
+m_F5.x=345;
+m_F5.y=387;
+m_F6.x=345;
+m_F6.y=518;
+m_F7.x=345;
+m_F7.y=636;
+m_F8.x=177;
+m_F8.y=387;
+m_F9.x=177;
+m_F9.y=520;
+m_F10.x=511;
+m_F10.y=387;
+m_F11.x=512;
+m_F11.y=520;
+m_F12.x=345;
+m_F12.y=824;
+
+//задаю координаты - серые рамки
+
+m_rg1.x=345;
+m_rg1.y=180;
+m_rg2.x=283;
+m_rg2.y=243;
+m_rg3.x=406;
+m_rg3.y=243;
+m_rg4.x=345;
+m_rg4.y=318;
+m_rg5.x=179;
+m_rg5.y=454;
+m_rg6.x=345;
+m_rg6.y=454;
+m_rg7.x=513;
+m_rg7.y=455;
+m_rg8.x=345;
+m_rg8.y=585;
+m_rg9.x=345;
+m_rg9.y=667;
+
+//задаю координаты - золотые рамки
+
+m_rgd1.x=345;
+m_rgd1.y=180;
+m_rgd2.x=283;
+m_rgd2.y=243;
+m_rgd3.x=406;
+m_rgd3.y=243;
+m_rgd4.x=345;
+m_rgd4.y=318;
+m_rgd5.x=179;
+m_rgd5.y=454;
+m_rgd6.x=345;
+m_rgd6.y=454;
+m_rgd7.x=513;
+m_rgd7.y=455;
+m_rgd8.x=345;
+m_rgd8.y=585;
+m_rgd9.x=345;
+m_rgd9.y=667;
+
+// Справка
+
+spr_CA.x=580;
+spr_CA.y=88;
+spr_CNA.x=580;
+spr_CNA.y=88;
+spr_ex.x=930;
+spr_ex.y=875;
+spr.x=928;
+spr.y=486;
+
+//Табло с информацией
+
+inf1.x=928;
+inf1.y=486;
+inf2.x=928;
+inf2.y=486;
+inf3.x=928;
+inf3.y=486;
+inf4.x=928;
+inf4.y=486;
+inf5.x=928;
+inf5.y=486;
+inf6.x=928;
+inf6.y=486;
+inf7.x=928;
+inf7.y=486;
+inf8.x=928;
+inf8.y=486;
+inf9.x=928;
+inf9.y=486;
+inf10.x=928;
+inf10.y=486;
+inf11.x=928;
+inf11.y=486;
+inf12.x=928;
+inf12.y=486;
+inf1n.x=928;
+inf1n.y=486;
+inf2n.x=928;
+inf2n.y=486;
+inf3n.x=928;
+inf3n.y=486;
+inf4n.x=928;
+inf4n.y=486;
+inf5n.x=928;
+inf5n.y=486;
+inf6n.x=928;
+inf6n.y=486;
+inf7n.x=928;
+inf7n.y=486;
+inf8n.x=928;
+inf8n.y=486;
+inf9n.x=928;
+inf9n.y=486;
+inf10n.x=928;
+inf10n.y=486;
+inf11n.x=928;
+inf11n.y=486;
+inf12n.x=928;
+inf12n.y=486;
+
+//Табличка конец игры и кнопки
+
+te_cont.x=930;
+te_cont.y=880;
+fon_te.x=640;
+fon_te.y=480;
+but_te.x=640;
+but_te.y=550;
+
+//Задания
+//Задание №1 Цикада
+
+//Координаты фона
+
+fon1.x=640;
+fon1.y=480;
+
+//Координаты кнопок
+
+t1_num83.x=1090;
+t1_num83.y=550;
+t1_num648.x=940;
+t1_num648.y=550;
+t1_num4.x=570;
+t1_num4.y=550;
+t1_num24.x=700;
+t1_num24.y=550;
+t1_num19100.x=385;
+t1_num19100.y=550;
+t1_num1000.x=210;
+t1_num1000.y=550;
+
+t1_num83g.x=1090;
+t1_num83g.y=550;
+t1_num648r.x=940;
+t1_num648r.y=550;
+t1_num648f.x=940;
+t1_num648f.y=550;
+t1_num4g.x=570;
+t1_num4g.y=550;
+t1_num24r.x=700;
+t1_num24r.y=550;
+t1_num24f.x=700;
+t1_num24f.y=550;
+t1_num19100r.x=385;
+t1_num19100r.y=550;
+t1_num19100f.x=385;
+t1_num19100f.y=550;
+t1_num1000g.x=210;
+t1_num1000g.y=550;
+
+t1_Vic.x=640;
+t1_Vic.y=630;
+
+//Задание №2 Контрольные станции
+
+fon2.x=640;
+fon2.y=480;
+
+ks_Active_SPb.x=219;
+ks_Active_SPb.y=281;
+ks_Active_Vorkuta.x=462;
+ks_Active_Vorkuta.y=373;
+ks_Active_Enisejsk.x=612;
+ks_Active_Enisejsk.y=576;
+ks_Active_Ulan.x=814;
+ks_Active_Ulan.y=638;
+ks_Active_Jakutsk.x=805;
+ks_Active_Jakutsk.y=345;
+ks_Active_Ussur.x=1011;
+ks_Active_Ussur.y=576;
+ks_Active_Petr.x=1147;
+ks_Active_Petr.y=377;
+
+ks_Spb.x=220;
+ks_Spb.y=293;
+ks_Vorkuta.x=462;
+ks_Vorkuta.y=385;
+ks_Enisejsk.x=612;
+ks_Enisejsk.y=589;
+ks_Ulan.x=813;
+ks_Ulan.y=650;
+ks_Jalutsk.x=805;
+ks_Jalutsk.y=355;
+ks_Ussurijsk.x=1009;
+ks_Ussurijsk.y=587;
+ks_Petropavlov.x=1145;
+ks_Petropavlov.y=396;
+
+ks_Num0.x=730;
+ks_Num0.y=810;
+ks_Num1.x=730;
+ks_Num1.y=810;
+ks_Num2.x=730;
+ks_Num2.y=810;
+ks_Num3.x=730;
+ks_Num3.y=810;
+ks_Num4.x=730;
+ks_Num4.y=810;
+ks_Num5.x=730;
+ks_Num5.y=810;
+ks_Num6.x=730;
+ks_Num6.y=810;
+ks_Num7.x=730;
+ks_Num7.y=810;
+
+ks_vic.x=1070;
+ks_vic.y=812;
+
+//Задание №3 Центр Управления
+
+fon3.x=640;
+fon3.y=480;
+t3_1.x=445;
+t3_1.y=428;
+t3_1r.x=445;
+t3_1r.y=428;
+t3_2.x=639;
+t3_2.y=479;
+t3_2g.x=639;
+t3_2g.y=479;
+t3_3.x=637;
+t3_3.y=532;
+t3_3r.x=637;
+t3_3r.y=532;
+t3_4.x=425;
+t3_4.y=584;
+t3_4r.x=425;
+t3_4r.y=584;
+
+t3_Vic.x=640;
+t3_Vic.y=622;
+
+//Задание №4 Центральный синхронихатор
+
+fon4.x=640;
+fon4.y=480;
+
+t4_num6.x=810;
+t4_num6.y=490;
+t4_num3.x=892;
+t4_num3.y=490;
+t4_num8.x=972;
+t4_num8.y=487;
+t4_num1.x=1057;
+t4_num1.y=490;
+
+t4_num6r.x=810;
+t4_num6r.y=490;
+t4_num3g.x=892;
+t4_num3g.y=490;
+t4_num8r.x=972;
+t4_num8r.y=487;
+t4_num1r.x=1057;
+t4_num1r.y=490;
+
+t4_Vic.x=930;
+t4_Vic.y=560;
+
+//Задание №5 Спутник Глонасс
+
+fon5.x=640;
+fon5.y=480;
+
+t5_smg1.x=-414;
+t5_smg1.y=333;
+t5_smg2.x=-222;
+t5_smg2.y=333;
+t5_smg3.x=-33;
+t5_smg3.y=333;
+t5_smg4.x=146;
+t5_smg4.y=333;
+t5_smg5.x=301.5;
+t5_smg5.y=333;
+
+t5_sg1.x=135;
+t5_sg1.y=33;
+t5_sg2.x=-211;
+t5_sg2.y=-177;
+t5_sg3.x=-19;
+t5_sg3.y=-113;
+t5_sg4.x=272;
+t5_sg4.y=-235;
+t5_sg5.x=-156;
+t5_sg5.y=-28;
+
+t5_s1.x=132;
+t5_s1.y=31;
+t5_s2.x=-211;
+t5_s2.y=-175;
+t5_s3.x=-19;
+t5_s3.y=-110;
+t5_s4.x=264;
+t5_s4.y=-233.5;
+t5_s5.x=-145.5;
+t5_s5.y=-27;
+
+t5_Vict.x=1;
+t5_Vict.y=-7;
+
+//Задание №6 Глонасс М
+
+fon6.x=640;
+fon6.y=480;
+
+t6_num75.x=236;
+t6_num75.y=491;
+t6_num402.x=469;
+t6_num402.y=491;
+t6_num1492.x=732;
+t6_num1492.y=491;
+t6_num19400.x=995;
+t6_num19400.y=488;
+
+t6_num75r.x=236;
+t6_num75r.y=491;
+t6_num402r.x=469;
+t6_num402r.y=491;
+t6_num1492r.x=732;
+t6_num1492r.y=491;
+t6_num19400g.x=995;
+t6_num19400g.y=488;
+
+t6_not.x=640;
+t6_not.y=579;
+
+t6_vict.x=640;
+t6_vict.y=579;
+
+//Задание №7 Глонасс К
+
+fon7.x=640;
+fon7.y=480;
+
+t7_ans1.x=430;
+t7_ans1.y=310;
+t7_ans2.x=835;
+t7_ans2.y=314;
+t7_ans3.x=431;
+t7_ans3.y=625;
+t7_ans4.x=834;
+t7_ans4.y=625;
+
+t7_ans1r.x=430;
+t7_ans1r.y=310;
+t7_ans2r.x=835;
+t7_ans2r.y=314;
+t7_ans3r.x=431;
+t7_ans3r.y=625;
+t7_ans4g.x=834;
+t7_ans4g.y=625;
+
+t7_vict.x=640;
+t7_vict.y=815;
+
+//Задание №8 Наземный сегмент СДКМ
+
+fon8.x=640;
+fon8.y=480;
+
+t8_1g.x=372;
+t8_1g.y=476;
+t8_1.x=372;
+t8_1.y=476;
+t8_2r.x=485;
+t8_2r.y=513;
+t8_2.x=485;
+t8_2.y=513;
+t8_3r.x=465;
+t8_3r.y=557;
+t8_3.x=465;
+t8_3.y=557;
+
+t8_n.x=950;
+t8_n.y=515;
+t8_vict.x=950;
+t8_vict.y=515;
+
+//Задание №9 Космический сегмент СДКМ
+
+fon9.x=640;
+fon9.y=480;
+
+t9_smg1.x=-413;
+t9_smg1.y=332;
+t9_smg2.x=-231.5;
+t9_smg2.y=334;
+t9_smg3.x=-74;
+t9_smg3.y=330;
+t9_smg4.x=91;
+t9_smg4.y=331;
+t9_smg5.x=254;
+t9_smg5.y=329.5;
+t9_smg6.x=428;
+t9_smg6.y=326;
+
+t9_sg1.x=-248;
+t9_sg1.y=-221.5;
+t9_sg2.x=38;
+t9_sg2.y=111;
+t9_sg3.x=-103.5;
+t9_sg3.y=-108;
+t9_sg4.x=112;
+t9_sg4.y=-38;
+t9_sg5.x=285;
+t9_sg5.y=-170;
+t9_sg6.x=165.5;
+t9_sg6.y=-187;
+
+t9_s1.x=-246;
+t9_s1.y=-222;
+t9_s2.x=35.5;
+t9_s2.y=110;
+t9_s3.x=22;
+t9_s3.y=-130.5;
+t9_s4.x=104.5;
+t9_s4.y=-38;
+t9_s5.x=284;
+t9_s5.y=-159;
+t9_s6.x=166;
+t9_s6.y=-188;
+
+t9_Vict.x=332;
+t9_Vict.y=192;
+
+//Задание №10 НАП ВС РФ
+
+fon10.x=640;
+fon10.y=480;
+
+t10_ans1r.x=576;
+t10_ans1r.y=410;
+t10_ans1.x=576;
+t10_ans1.y=410;
+t10_ans2r.x=480;
+t10_ans2r.y=474;
+t10_ans2.x=480;
+t10_ans2.y=474;
+t10_ans3g.x=512;
+t10_ans3g.y=536;
+t10_ans3.x=512;
+t10_ans3.y=536;
+t10_ans4r.x=527;
+t10_ans4r.y=599;
+t10_ans4.x=527;
+t10_ans4.y=599;
+
+t10_vict.x=610;
+t10_vict.y=645;
+
+//Задание №11 НАП Гражданский
+
+t11_vict.x=935; 
+t11_vict.y=545;
+
+fon11.x=640;
+fon11.y=480;
+
+t11_num1.x=808;
+t11_num1.y=490;
+t11_num2.x=885;
+t11_num2.y=490;
+t11_num3.x=969;
+t11_num3.y=489;
+t11_num4.x=1048;
+t11_num4.y=490;
+
+t11_num1r.x=808;
+t11_num1r.y=490;
+t11_num2r.x=885;
+t11_num2r.y=490;
+t11_num3r.x=969;
+t11_num3r.y=489;
+t11_num4g.x=1048;
+t11_num4g.y=490;
+
+//Задание №12 Система Глонасс
+
+fon12.x=640;
+fon12.y=480;
+
+t12_ans1r.x=488;
+t12_ans1r.y=515;
+t12_ans1.x=488;
+t12_ans1.y=515;
+t12_ans2g.x=770;
+t12_ans2g.y=515;
+t12_ans2.x=770;
+t12_ans2.y=515;
+
+t12_vict.x=640;
+t12_vict.y=584;
+//_____________________________________________________________________________________________
+
+
+
+//Вывожу на экран
+//Отображаю основные элементы
+//отображаю меню
+
+addChildAt(menu,0);
+
+//отображаю фоновые ячейки
+
+addChild(m_A1);
+addChild(m_NA2);
+addChild(m_NA3);
+addChild(m_NA4);
+addChild(m_NA5);
+addChild(m_NA6);
+addChild(m_NA7);
+addChild(m_NA8);
+addChild(m_NA9);
+addChild(m_NA10);
+addChild(m_NA11);
+addChild(m_NA12);
+
+//Отображаю серые рамки
+
+addChildAt(m_rg1,1); 
+addChildAt(m_rg2,1); 
+addChildAt(m_rg3,1); 
+addChildAt(m_rg4,1); 
+addChildAt(m_rg5,1); 
+addChildAt(m_rg6,1); 
+addChildAt(m_rg7,1); 
+addChildAt(m_rg8,1); 
+addChildAt(m_rg9,1); 
+
+// Справка
+
+//addChild(spr_CA);
+addChild(spr);
+addChild(spr_ex);
+
+		m_A1.mouseEnabled=false;
+		m_A2.mouseEnabled=false;
+		m_A3.mouseEnabled=false;
+		m_A4.mouseEnabled=false;
+		m_A5.mouseEnabled=false;
+		m_A6.mouseEnabled=false;
+		m_A7.mouseEnabled=false;
+		m_A8.mouseEnabled=false;
+		m_A9.mouseEnabled=false;
+		m_A10.mouseEnabled=false;
+		m_A11.mouseEnabled=false;
+		m_A12.mouseEnabled=false;
+
+function SprPr1(){
+	if(addChild(spr_CNA)){
+		m_A1.mouseEnabled=false;
+		m_A2.mouseEnabled=false;
+		m_A3.mouseEnabled=false;
+		m_A4.mouseEnabled=false;
+		m_A5.mouseEnabled=false;
+		m_A6.mouseEnabled=false;
+		m_A7.mouseEnabled=false;
+		m_A8.mouseEnabled=false;
+		m_A9.mouseEnabled=false;
+		m_A10.mouseEnabled=false;
+		m_A11.mouseEnabled=false;
+		m_A12.mouseEnabled=false}
+}
+function SprPr2(){
+	if(addChild(spr_CA)){
+		m_A1.mouseEnabled=true;
+		m_A2.mouseEnabled=true;
+		m_A3.mouseEnabled=true;
+		m_A4.mouseEnabled=true;
+		m_A5.mouseEnabled=true;
+		m_A6.mouseEnabled=true;
+		m_A7.mouseEnabled=true;
+		m_A8.mouseEnabled=true;
+		m_A9.mouseEnabled=true;
+		m_A10.mouseEnabled=true;
+		m_A11.mouseEnabled=true;
+		m_A12.mouseEnabled=true}
+}
+
+spr_CA.addEventListener(MouseEvent.CLICK, clickSPR);
+	function clickSPR(event:MouseEvent):void {
+		removeChild(spr_CA);
+		addChild(spr);
+		addChild(spr_ex);
+		addChild(spr_CNA);
+		SprPr1();
+}
+
+spr_ex.addEventListener(MouseEvent.CLICK, clickSPRex);
+	function clickSPRex(event:MouseEvent):void {
+		if(addChild(spr_CNA)){removeChild(spr_CNA)}
+		removeChild(spr);
+		removeChild(spr_ex);
+		addChild(spr_CA);
+		SprPr2();
+}
+
+
+
+//Активация заданий
+m_A1.addEventListener(MouseEvent.CLICK, clickMA1);
+	function clickMA1(event:MouseEvent):void 
+	{
+		if(proverka1==false) {
+			addChild(inf1n);
+			addChild(fon1);
+			addChild(t1_num1000);
+			addChild(t1_num19100);
+			addChild(t1_num24);
+			addChild(t1_num4);
+			addChild(t1_num648);
+			addChild(t1_num83)
+			m_A1.mouseEnabled=false;
+			spr_CA.mouseEnabled=false;
+		}
+	}
+
+m_A2.addEventListener(MouseEvent.CLICK, clickMA2);
+	function clickMA2(event:MouseEvent):void 
+	{
+		if(proverka2==false) {
+			if(addChild(inf4)){
+				removeChild(inf4)} 
+			addChild(inf2n);
+			addChild(fon2);
+			addChild(ks_Active_SPb);
+			addChild(ks_Active_Vorkuta);
+			addChild(ks_Active_Enisejsk);
+			addChild(ks_Active_Ulan);
+			addChild(ks_Active_Jakutsk);
+			addChild(ks_Active_Ussur);
+			addChild(ks_Active_Petr);
+			addChild(ks_Num7);			
+			m_A2.mouseEnabled=false;
+			spr_CA.mouseEnabled=false;
+		}
+	}
+
+m_A3.addEventListener(MouseEvent.CLICK, clickMA3);
+	function clickMA3(event:MouseEvent):void 
+	{
+		if(proverka3==false) {
+			removeChild(inf1);
+			addChild(inf3n);
+			addChild(fon3);
+			addChild(t3_1);
+			addChild(t3_2);
+			addChild(t3_3);
+			addChild(t3_4);
+			m_A3.mouseEnabled=false;
+			spr_CA.mouseEnabled=false;
+		}
+	}
+
+m_A4.addEventListener(MouseEvent.CLICK, clickMA4);
+	function clickMA4(event:MouseEvent):void 
+	{
+		if(proverka4==false) {
+			if(addChild(inf2)){
+				removeChild(inf2);
+				addChild(inf4n)}else{addChild(inf4n)} 
+			addChild(fon4);
+			addChild(t4_num6);
+			addChild(t4_num3);
+			addChild(t4_num8);
+			addChild(t4_num1);
+			m_A4.mouseEnabled=false;
+			spr_CA.mouseEnabled=false;
+		}
+	}
+	
+m_A5.addEventListener(MouseEvent.CLICK, clickMA5);
+	function clickMA5(event:MouseEvent):void 
+	{
+		if(proverka5==false) {
+			addChild(fon5);
+			fon5.addChild(t5_smg1);
+			fon5.addChild(t5_smg2);
+			fon5.addChild(t5_smg3);
+			fon5.addChild(t5_smg4);
+			fon5.addChild(t5_smg5);
+			m_A5.mouseEnabled=false;
+			spr_CA.mouseEnabled=false;
+		}
+	}
+	
+m_A6.addEventListener(MouseEvent.CLICK, clickMA6);
+	function clickMA6(event:MouseEvent):void 
+	{
+		if(proverka6==false) {
+			addChild(inf6n);
+			addChild(fon6);
+			addChild(t6_num75);
+			addChild(t6_num402);
+			addChild(t6_num19400);
+			addChild(t6_num1492);
+			m_A6.mouseEnabled=false;
+			spr_CA.mouseEnabled=false;
+		}
+	}
+	
+m_A7.addEventListener(MouseEvent.CLICK, clickMA7);
+	function clickMA7(event:MouseEvent):void 
+	{
+		if(proverka7==false) {
+			addChild(inf7n);
+			addChild(fon7);
+			addChild(t7_ans1);
+			addChild(t7_ans2);
+			addChild(t7_ans3);
+			addChild(t7_ans4);
+			m_A7.mouseEnabled=false;
+			spr_CA.mouseEnabled=false;
+		}
+	}
+
+m_A8.addEventListener(MouseEvent.CLICK, clickMA8);
+	function clickMA8(event:MouseEvent):void 
+	{
+		if(proverka8==false) {
+			addChild(inf8n);
+			addChild(fon8);
+			addChild(t8_1);
+			addChild(t8_2);
+			addChild(t8_3);
+			m_A8.mouseEnabled=false;
+			spr_CA.mouseEnabled=false;
+		}
+	}
+	
+m_A9.addEventListener(MouseEvent.CLICK, clickMA9);
+	function clickMA9(event:MouseEvent):void 
+	{
+		if(proverka9==false) {
+			addChild(inf9n);
+			addChild(fon9);
+			fon9.addChild(t9_smg1);
+			fon9.addChild(t9_smg2);
+			fon9.addChild(t9_smg3);
+			fon9.addChild(t9_smg4);
+			fon9.addChild(t9_smg5);
+			fon9.addChild(t9_smg6);
+			m_A9.mouseEnabled=false;
+			spr_CA.mouseEnabled=false;
+		}
+	}
+	
+m_A10.addEventListener(MouseEvent.CLICK, clickMA10);
+	function clickMA10(event:MouseEvent):void 
+	{
+		if(proverka10==false) {
+			addChild(inf10n);
+			addChild(fon10);
+			addChild(t10_ans1);
+			addChild(t10_ans2);
+			addChild(t10_ans3);
+			addChild(t10_ans4);
+			m_A10.mouseEnabled=false;
+			spr_CA.mouseEnabled=false;
+		}
+	}
+	
+m_A11.addEventListener(MouseEvent.CLICK, clickMA11);
+	function clickMA11(event:MouseEvent):void 
+	{
+		if(proverka11==false) {
+			addChild(inf11n);
+			addChild(fon11);
+			addChild(t11_num1);
+			addChild(t11_num2);
+			addChild(t11_num3);
+			addChild(t11_num4);
+			m_A11.mouseEnabled=false;
+			spr_CA.mouseEnabled=false;
+		}
+	}
+	
+m_A12.addEventListener(MouseEvent.CLICK, clickMA12);
+	function clickMA12(event:MouseEvent):void 
+	{
+		if(proverka12==false) {
+			addChild(inf12n);
+			addChild(fon12);
+			addChild(t12_ans1);
+			addChild(t12_ans2);
+			m_A12.mouseEnabled=false;
+			spr_CA.mouseEnabled=false;
+		}
+	}
+
+
+
+//Задания
+//Задание №1 Цикада
+
+function t1_Test1(){
+	if(t1_test1==1){
+	removeChild(t1_num648r);
+	addChild(t1_num648);
+	t1_test1=0}
+}
+function t1_Test2(){
+	if(t1_test2==1){
+	removeChild(t1_num24r);
+	addChild(t1_num24);
+	t1_test2=0}
+}
+function t1_Test3(){
+	if(t1_test3==1){
+	removeChild(t1_num19100r);
+	addChild(t1_num19100);
+	t1_test3=0}
+}
+
+function t1_Victory(){
+	if (t1_1==true && t1_2==true && t1_3==true) {
+		proverka1=true;
+		addChild(t1_Vic);
+		t1_Vic.gotoAndPlay(1);}
+}
+
+t1_num83.addEventListener(MouseEvent.CLICK, clickNum83);
+function clickNum83(evt:MouseEvent): void {
+	t1_1 = true;t1_Victory();
+	t1_Test1();
+	t1_num648.mouseEnabled = false;
+	removeChild(t1_num83);
+	addChild(t1_num83g);
+}
+
+t1_num648.addEventListener(MouseEvent.CLICK, clickNum648);
+function clickNum648(evt:MouseEvent): void {
+	removeChild(t1_num648);
+	addChild(t1_num648r);
+	t1_test1=1;
+}
+
+t1_num4.addEventListener(MouseEvent.CLICK, clickNum4);
+function clickNum4(evt:MouseEvent): void {
+	t1_2 = true;t1_Victory();
+	t1_Test2();
+	t1_num24.mouseEnabled = false;
+	removeChild(t1_num4);
+	addChild(t1_num4g);
+} 
+
+t1_num24.addEventListener(MouseEvent.CLICK, clickNum24);
+function clickNum24(evt:MouseEvent): void {
+	removeChild(t1_num24);
+	addChild(t1_num24r);
+	t1_test2=1;
+}
+
+t1_num19100.addEventListener(MouseEvent.CLICK, clickNum19100);
+function clickNum19100(evt:MouseEvent): void {
+	removeChild(t1_num19100);
+	addChild(t1_num19100r);
+	t1_test3=1;
+}
+
+t1_num1000.addEventListener(MouseEvent.CLICK, clickNum1000);
+function clickNum1000(evt:MouseEvent): void {
+	t1_Test3();
+	t1_3 = true;t1_Victory();
+	t1_num19100.mouseEnabled = false;
+	removeChild(t1_num1000);
+	addChild(t1_num1000g);
+}
+
+//Переход в меню
+
+t1_Vic.addEventListener(MouseEvent.CLICK, clickT1vc);
+function clickT1vc(event:MouseEvent):void 
+{
+if(proverka1==true){
+	removeChild(t1_Vic); 
+	removeChild(fon1);
+	removeChild(t1_num1000g);
+	removeChild(t1_num19100);
+	removeChild(t1_num24);
+	removeChild(t1_num4g);
+	removeChild(t1_num648);
+	removeChild(t1_num83g);
+	removeChild(m_rg1);
+	removeChild(m_A1);
+	removeChild(m_NA3);
+	addChildAt(m_rgd1,1);
+	addChild(m_F1);
+	addChild(m_A3);
+	addChild(inf1);
+	spr_CA.mouseEnabled=true;
+}
+}
+
+//Задание №2 Контрольные станции
+
+function Vic(){
+	if (vic==0) {
+		proverka2=true;
+		addChild(ks_vic)};
+}
+
+function Num(){
+	if (num==6) {addChild(ks_Num6); removeChild(ks_Num7)}
+	else if (num==5) {addChild(ks_Num5); removeChild(ks_Num6)}
+	else if (num==4) {addChild(ks_Num4); removeChild(ks_Num5)}
+	else if (num==3) {addChild(ks_Num3); removeChild(ks_Num4)}
+	else if (num==2) {addChild(ks_Num2); removeChild(ks_Num3)}
+	else if (num==1) {addChild(ks_Num1); removeChild(ks_Num2)}
+	else if (num==0) {addChild(ks_Num0); removeChild(ks_Num1)};
+}
+
+ks_Active_SPb.addEventListener(MouseEvent.CLICK, clickActSPb);
+function clickActSPb(evt:MouseEvent): void {
+	removeChild(ks_Active_SPb);
+	addChild(ks_Spb);
+	vic=vic-1; num=num-1;
+	Vic(); Num();
+}
+ks_Active_Vorkuta.addEventListener(MouseEvent.CLICK, clickActVorkuta);
+function clickActVorkuta(evt:MouseEvent): void {
+	removeChild(ks_Active_Vorkuta);
+	addChild(ks_Vorkuta);
+	vic=vic-1; num=num-1;
+	Vic(); Num();
+}
+ks_Active_Enisejsk.addEventListener(MouseEvent.CLICK, clickActEnisejsk);
+function clickActEnisejsk(evt:MouseEvent): void {
+	removeChild(ks_Active_Enisejsk);
+	addChild(ks_Enisejsk);
+	vic=vic-1; num=num-1;
+	Vic(); Num();
+}
+ks_Active_Ulan.addEventListener(MouseEvent.CLICK, clickActUlan);
+function clickActUlan(evt:MouseEvent): void {
+	removeChild(ks_Active_Ulan);
+	addChild(ks_Ulan);
+	vic=vic-1; num=num-1;
+	Vic(); Num();
+}
+ks_Active_Jakutsk.addEventListener(MouseEvent.CLICK, clickActJakutsk);
+function clickActJakutsk(evt:MouseEvent): void {
+	removeChild(ks_Active_Jakutsk);
+	addChild(ks_Jalutsk);
+	vic=vic-1; num=num-1;
+	Vic(); Num();
+}
+ks_Active_Ussur.addEventListener(MouseEvent.CLICK, clickActUssur);
+function clickActUssur(evt:MouseEvent): void {
+	removeChild(ks_Active_Ussur);
+	addChild(ks_Ussurijsk);
+	vic=vic-1; num=num-1;
+	Vic(); Num();
+}
+ks_Active_Petr.addEventListener(MouseEvent.CLICK, clickActPetr);
+function clickActPetr(evt:MouseEvent): void {
+	removeChild(ks_Active_Petr);
+	addChild(ks_Petropavlov);
+	vic=vic-1; num=num-1;
+	Vic(); Num();
+}
+
+//Переход в меню
+
+ks_vic.addEventListener(MouseEvent.CLICK, clickT2vc);
+function clickT2vc(event:MouseEvent):void 
+{
+if(proverka2==true && proverka4==true){
+	addChild(inf2);
+	removeChild(m_rg4);
+	removeChild(m_NA5);
+	removeChild(m_NA8);
+	removeChild(m_NA10);
+	addChildAt(m_rgd4,1)
+	addChild(m_A5);
+	addChild(m_A8);
+	addChild(m_A10);
+	removeChild(fon2);
+	removeChild(ks_vic);
+	removeChild(ks_Spb);
+	removeChild(ks_Vorkuta);
+	removeChild(ks_Enisejsk);
+	removeChild(ks_Ulan);
+	removeChild(ks_Jalutsk);
+	removeChild(ks_Ussurijsk);
+	removeChild(ks_Petropavlov);
+	removeChild(ks_Num0);
+	removeChild(m_A2);
+	addChild(m_F2);
+	spr_CA.mouseEnabled=true} else if(proverka2==true){
+		addChild(inf2);
+		removeChild(fon2);
+		removeChild(ks_vic);
+		removeChild(ks_Spb);
+		removeChild(ks_Vorkuta);
+		removeChild(ks_Enisejsk);
+		removeChild(ks_Ulan);
+		removeChild(ks_Jalutsk);
+		removeChild(ks_Ussurijsk);
+		removeChild(ks_Petropavlov);
+		removeChild(ks_Num0);
+		removeChild(m_A2);
+		addChild(m_F2);
+		spr_CA.mouseEnabled=true;}
+}
+
+//Задание №3 Центр Управления
+
+function t3_Test1(){
+	if(t3_test3==1){
+	removeChild(t3_3r);
+	addChild(t3_3);
+	t3_test3=0}else if(t3_test4==1){
+		removeChild(t3_4r);
+		addChild(t3_4);
+		t3_test4=0}
+	}
+function t3_Test2(){
+	if(t3_test1==1){
+	removeChild(t3_1r);
+	addChild(t3_1);}else if(t3_test3==1){
+		removeChild(t3_3r);
+		addChild(t3_3)}else if(t3_test4==1){
+		removeChild(t3_4r);
+		addChild(t3_4)}
+}
+function t3_Test3(){
+	if(t3_test1==1){
+	removeChild(t3_1r);
+	addChild(t3_1);
+	t3_test1=0}else if(t3_test4==1){
+		removeChild(t3_4r);
+		addChild(t3_4);
+		t3_test4=0}
+}
+function t3_Test4(){
+	if(t3_test1==1){
+	removeChild(t3_1r);
+	addChild(t3_1);
+	t3_test1=0}else if(t3_test3==1){
+		removeChild(t3_3r);
+		addChild(t3_3);
+		t3_test3=0}
+}
+
+function t3_Victory(){
+	if (t3==true) {
+		proverka3=true;
+		addChild(t3_Vic);
+		t3_Vic.gotoAndPlay(1);}
+}
+
+
+t3_1.addEventListener(MouseEvent.CLICK, clickT3Ans1);
+function clickT3Ans1(evt:MouseEvent): void {
+	t3_test1=1;
+	t3_Test1();
+	removeChild(t3_1);
+	addChild(t3_1r);
+}
+
+t3_2.addEventListener(MouseEvent.CLICK, clickT3Ans2);
+function clickT3Ans2(evt:MouseEvent): void {
+	t3_Test2();
+	t3 = true; t3_Victory();
+	t3_1.mouseEnabled=false;
+	t3_3.mouseEnabled=false;
+	t3_4.mouseEnabled=false;
+	removeChild(t3_2);
+	addChild(t3_2g);
+}
+
+t3_3.addEventListener(MouseEvent.CLICK, clickT3Ans3);
+function clickT3Ans3(evt:MouseEvent): void {
+	t3_test3=1;
+	t3_Test3();
+	removeChild(t3_3);
+	addChild(t3_3r);
+} 
+
+t3_4.addEventListener(MouseEvent.CLICK, clickT3Ans4);
+function clickT3Ans4(evt:MouseEvent): void {
+	t3_test4=1;
+	t3_Test4();
+	removeChild(t3_4);
+	addChild(t3_4r);
+}
+
+//Переход в меню
+
+t3_Vic.addEventListener(MouseEvent.CLICK, clickT3vc);
+function clickT3vc(event:MouseEvent):void 
+{
+if(proverka3==true){
+	removeChild(t3_Vic); 
+	removeChild(fon3);
+	removeChild(t3_1);
+	removeChild(t3_2g);
+	removeChild(t3_3);
+	removeChild(t3_4);
+	removeChild(m_rg2);
+	removeChild(m_rg3);
+	removeChild(m_A3);
+	removeChild(m_NA2);
+	removeChild(m_NA4);
+	addChild(inf3);
+	addChildAt(m_rgd2,1);
+	addChildAt(m_rgd3,1);
+	addChild(m_F3);
+	addChild(m_A2);
+	spr_CA.mouseEnabled=true;
+	addChild(m_A4);
+}
+}
+
+//Задание №4 Центральный синхронизатор
+
+function t4_Test1(){
+	if(t4_test3==1){
+	removeChild(t4_num8r);
+	addChild(t4_num8);
+	t4_test3=0}else if(t4_test4==1){
+		removeChild(t4_num1r);
+		addChild(t4_num1);
+		t4_test4=0}
+	}
+function t4_Test2(){
+	if(t4_test1==1){
+	removeChild(t4_num6r);
+	addChild(t4_num6);}else if(t4_test3==1){
+		removeChild(t4_num8r);
+		addChild(t4_num8)}else if(t4_test4==1){
+		removeChild(t4_num1r);
+		addChild(t4_num1)}
+}
+function t4_Test3(){
+	if(t4_test1==1){
+	removeChild(t4_num6r);
+	addChild(t4_num6);
+	t4_test1=0}else if(t4_test4==1){
+		removeChild(t4_num1r);
+		addChild(t4_num1);
+		t4_test4=0}
+}
+function t4_Test4(){
+	if(t4_test1==1){
+	removeChild(t4_num6r);
+	addChild(t4_num6);
+	t4_test1=0}else if(t4_test3==1){
+		removeChild(t4_num8r);
+		addChild(t4_num8);
+		t4_test3=0}
+}
+
+function t4_Victory(){
+	if (t4==true) {
+		proverka4=true;
+		addChild(t4_Vic);
+		t4_Vic.gotoAndPlay(1);}
+}
+
+t4_num6.addEventListener(MouseEvent.CLICK, clickNum6);
+function clickNum6(evt:MouseEvent): void {
+	t4_test1=1;
+	t4_Test1();
+	removeChild(t4_num6);
+	addChild(t4_num6r);
+}
+
+t4_num3.addEventListener(MouseEvent.CLICK, clickNum3);
+function clickNum3(evt:MouseEvent): void {
+	t4_Test2();
+	t4_num6.mouseEnabled=false;
+	t4_num8.mouseEnabled=false;
+	t4_num1.mouseEnabled=false;
+	t4=true;t4_Victory();
+	removeChild(t4_num3);
+	addChild(t4_num3g);
+}
+
+t4_num8.addEventListener(MouseEvent.CLICK, clickNum8);
+function clickNum8(evt:MouseEvent): void {
+	t4_test3=1;
+	t4_Test3();
+	removeChild(t4_num8);
+	addChild(t4_num8r);
+} 
+
+t4_num1.addEventListener(MouseEvent.CLICK, clickNum1);
+function clickNum1(evt:MouseEvent): void {
+	t4_test4=1;
+	t4_Test4();
+	removeChild(t4_num1);
+	addChild(t4_num1r);
+}
+
+t4_Vic.addEventListener(MouseEvent.CLICK, clickT4vc);
+function clickT4vc(event:MouseEvent):void 
+{
+if(proverka4==true && proverka2==true){
+	addChild(inf4);
+	removeChild(m_rg4);
+	removeChild(m_NA5);
+	removeChild(m_NA8);
+	removeChild(m_NA10);
+	addChildAt(m_rgd4,1)
+	addChild(m_A5);
+	addChild(m_A8);
+	addChild(m_A10);
+	removeChild(fon4);
+	removeChild(t4_num6);
+	spr_CA.mouseEnabled=true;
+	removeChild(t4_num3g);
+	removeChild(t4_num8);
+	removeChild(t4_num1);
+	removeChild(t4_Vic);
+	removeChild(m_A4);
+	addChild(m_F4)} else if(proverka4==true){
+						addChild(inf4);
+						removeChild(fon4);
+						removeChild(t4_num6);
+						spr_CA.mouseEnabled=true;
+						removeChild(t4_num3g);
+						removeChild(t4_num8);
+						removeChild(t4_num1);
+						removeChild(t4_Vic);
+						removeChild(m_A4);
+						addChild(m_F4)}
+}
+
+//Задание №5 Спутник Глонасс
+
+function t5_Victory(){
+	if(t5_Vic==5){
+		proverka5=true;
+		fon5.addChild(t5_Vict);
+		t5_Vict.gotoAndPlay(1)};
+}
+
+t5_smg1.addEventListener(MouseEvent.CLICK, clickT5_smg1);
+function clickT5_smg1(evt:MouseEvent): void {
+	fon5.removeChild(t5_smg1);
+	fon5.addChildAt(t5_sg1,5);
+	t5_smg2.mouseEnabled = false;
+	t5_smg3.mouseEnabled = false;
+	t5_smg4.mouseEnabled = false;
+	t5_smg5.mouseEnabled = false;
+}
+t5_smg2.addEventListener(MouseEvent.CLICK, clickT5_smg2);
+function clickT5_smg2(evt:MouseEvent): void {
+	fon5.removeChild(t5_smg2);
+	fon5.addChildAt(t5_sg2,1);
+	t5_smg1.mouseEnabled = false;
+	t5_smg3.mouseEnabled = false;
+	t5_smg4.mouseEnabled = false;
+	t5_smg5.mouseEnabled = false;
+}
+t5_smg3.addEventListener(MouseEvent.CLICK, clickT5_smg3);
+function clickT5_smg3(evt:MouseEvent): void {
+	fon5.removeChild(t5_smg3);
+	fon5.addChildAt(t5_sg3,2);
+	t5_smg1.mouseEnabled = false;
+	t5_smg2.mouseEnabled = false;
+	t5_smg4.mouseEnabled = false;
+	t5_smg5.mouseEnabled = false;
+}
+t5_smg4.addEventListener(MouseEvent.CLICK, clickT5_smg4);
+function clickT5_smg4(evt:MouseEvent): void {
+	fon5.removeChild(t5_smg4);
+	fon5.addChildAt(t5_sg4,3);
+	t5_smg1.mouseEnabled = false;
+	t5_smg2.mouseEnabled = false;
+	t5_smg3.mouseEnabled = false;
+	t5_smg5.mouseEnabled = false;
+}
+t5_smg5.addEventListener(MouseEvent.CLICK, clickT5_smg5);
+function clickT5_smg5(evt:MouseEvent): void {
+	fon5.removeChild(t5_smg5);
+	fon5.addChildAt(t5_sg5,4);
+	t5_smg1.mouseEnabled = false;
+	t5_smg2.mouseEnabled = false;
+	t5_smg3.mouseEnabled = false;
+	t5_smg4.mouseEnabled = false;
+}
+
+
+
+
+
+
+
+t5_sg1.addEventListener(MouseEvent.CLICK, clickT5_sg1);
+function clickT5_sg1(evt:MouseEvent): void {
+	fon5.removeChild(t5_sg1);
+	fon5.addChildAt(t5_s1,5);
+	t5_smg2.mouseEnabled = true;
+	t5_smg3.mouseEnabled = true;
+	t5_smg4.mouseEnabled = true;
+	t5_smg5.mouseEnabled = true;
+	t5_Vic=t5_Vic+1;
+	t5_Victory();
+}
+t5_sg2.addEventListener(MouseEvent.CLICK, clickT5_sg2);
+function clickT5_sg2(evt:MouseEvent): void {
+	fon5.removeChild(t5_sg2);
+	fon5.addChildAt(t5_s2,1);
+	t5_smg1.mouseEnabled = true;
+	t5_smg3.mouseEnabled = true;
+	t5_smg4.mouseEnabled = true;
+	t5_smg5.mouseEnabled = true;
+	t5_Vic=t5_Vic+1;
+	t5_Victory();
+}
+t5_sg3.addEventListener(MouseEvent.CLICK, clickT5_sg3);
+function clickT5_sg3(evt:MouseEvent): void {
+	fon5.removeChild(t5_sg3);
+	fon5.addChildAt(t5_s3,2);
+	t5_smg2.mouseEnabled = true;
+	t5_smg1.mouseEnabled = true;
+	t5_smg4.mouseEnabled = true;
+	t5_smg5.mouseEnabled = true;
+	t5_Vic=t5_Vic+1;
+	t5_Victory();
+}
+t5_sg4.addEventListener(MouseEvent.CLICK, clickT5_sg4);
+function clickT5_sg4(evt:MouseEvent): void {
+	fon5.removeChild(t5_sg4);
+	fon5.addChildAt(t5_s4,3);
+	t5_smg2.mouseEnabled = true;
+	t5_smg3.mouseEnabled = true;
+	t5_smg1.mouseEnabled = true;
+	t5_smg5.mouseEnabled = true;
+	t5_Vic=t5_Vic+1;
+	t5_Victory();
+}
+t5_sg5.addEventListener(MouseEvent.CLICK, clickT5_sg5);
+function clickT5_sg5(evt:MouseEvent): void {
+	fon5.removeChild(t5_sg5);
+	fon5.addChildAt(t5_s5,4);
+	t5_smg2.mouseEnabled = true;
+	t5_smg3.mouseEnabled = true;
+	t5_smg4.mouseEnabled = true;
+	t5_smg1.mouseEnabled = true;
+	t5_Vic=t5_Vic+1;
+	t5_Victory();
+}
+
+t5_Vict.addEventListener(MouseEvent.CLICK, clickT5vc);
+function clickT5vc(event:MouseEvent):void 
+{
+if(proverka5==true){
+	addChild(inf5);
+	removeChild(m_rg6);
+	removeChild(m_A5);
+	addChildAt(m_rgd6,1)
+	addChild(m_A6);
+	addChild(m_F5);
+	spr_CA.mouseEnabled=true;
+	removeChild(fon5)} 
+}
+
+//Задание №6 Глонасс М
+
+function T6_Test1(){
+	if(t6_test2==1){
+	removeChild(t6_num402r);
+	addChild(t6_num402);
+	t6_test2=0}else if(t6_test3==1){
+		removeChild(t6_num1492r);
+		addChild(t6_num1492);
+		t6_test3=0}
+	}
+function T6_Test2(){
+	if(t6_test1==1){
+	removeChild(t6_num75r);
+	addChild(t6_num75);
+	t6_test1=0}else if(t6_test3==1){
+		removeChild(t6_num1492r);
+		addChild(t6_num1492);
+		t6_test3=0}
+}
+function T6_Test3(){
+	if(t6_test1==1){
+	removeChild(t6_num75r);
+	addChild(t6_num75);
+	t6_test1=0}else if(t6_test2==1){
+		removeChild(t6_num402r);
+		addChild(t6_num402);
+		t6_test2=0}
+}
+function T6_Test4(){
+	if(t6_test1==1){
+	removeChild(t6_num75r);
+	addChild(t6_num75);}else if(t6_test2==1){
+		removeChild(t6_num402r);
+		addChild(t6_num402)}else if(t6_test3==1){
+		removeChild(t6_num1492r);
+		addChild(t6_num1492)}
+}
+
+function t6_Victory(){
+	if(t6_Vic==true){
+		proverka6=true;
+		addChild(t6_vict);
+		t6_vict.gotoAndPlay(1)};
+}
+
+t6_num75.addEventListener(MouseEvent.CLICK, clickNum75);
+function clickNum75(evt:MouseEvent): void {
+	t6_test1=1;
+	T6_Test1();
+	removeChild(t6_num75);
+	addChild(t6_num75r);
+}
+
+t6_num402.addEventListener(MouseEvent.CLICK, clickNum402);
+function clickNum402(evt:MouseEvent): void {
+	t6_test2=1;
+	T6_Test2();
+	removeChild(t6_num402);
+	addChild(t6_num402r);
+} 
+
+t6_num1492.addEventListener(MouseEvent.CLICK, clickNum1492);
+function clickNum1492(evt:MouseEvent): void {
+	t6_test3=1;
+	T6_Test3();
+	removeChild(t6_num1492);
+	addChild(t6_num1492r);
+}
+
+t6_num19400.addEventListener(MouseEvent.CLICK, clickNum19400);
+function clickNum19400(evt:MouseEvent): void {
+	t6_Vic=true;
+	T6_Test4();
+	t6_num75.mouseEnabled = false;
+	t6_num402.mouseEnabled = false;
+	t6_num1492.mouseEnabled = false;
+	removeChild(t6_num19400);
+	addChild(t6_num19400g);
+	t6_Victory();
+}
+
+t6_vict.addEventListener(MouseEvent.CLICK, clickT6vc);
+function clickT6vc(event:MouseEvent):void 
+{
+if(proverka6==true){
+	removeChild(m_rg8);
+	removeChild(m_A6);
+	addChildAt(m_rgd8,1)
+	addChild(m_A7);
+	addChild(m_F6);
+	addChild(inf6);
+	removeChild(t6_vict)
+	removeChild(inf6n);
+	removeChild(fon6);
+	removeChild(t6_num75);
+	removeChild(t6_num402);
+	removeChild(t6_num19400g);
+	spr_CA.mouseEnabled=true;
+	removeChild(t6_num1492)} 
+}
+
+//Задание №7 Глонасс К
+
+function t7_Test1(){
+	if(t7_test2==1){
+	removeChild(t7_ans2r);
+	addChild(t7_ans2);
+	t7_test2=0}else if(t7_test3==1){
+		removeChild(t7_ans3r);
+		addChild(t7_ans3);
+		t7_test3=0}
+	}
+function t7_Test2(){
+	if(t7_test1==1){
+	removeChild(t7_ans1r);
+	addChild(t7_ans1);
+	t7_test1=0;}else if(t7_test3==1){
+		removeChild(t7_ans3r);
+		addChild(t7_ans3);
+		t7_test3=0;}
+}
+function t7_Test3(){
+	if(t7_test1==1){
+	removeChild(t7_ans1r);
+	addChild(t7_ans1);
+	t7_test1=0}else if(t7_test2==1){
+		removeChild(t7_ans2r);
+		addChild(t7_ans2);
+		t7_test2=0}
+}
+function t7_Test4(){
+	if(t7_test1==1){
+	removeChild(t7_ans1r);
+	addChild(t7_ans1);}else if(t7_test2==1){
+		removeChild(t7_ans2r);
+		addChild(t7_ans2);}else if(t7_test3==1){
+			removeChild(t7_ans3r);
+			addChild(t7_ans3);
+		}
+}
+
+function t7_Victory(){
+	if (t7_Vic==true) {
+		proverka7=true;
+		addChild(t7_vict);
+		t7_vict.gotoAndPlay(1);}
+}
+
+t7_ans1.addEventListener(MouseEvent.CLICK, clickT7Ans1);
+function clickT7Ans1(evt:MouseEvent): void {
+	t7_test1=1;
+	t7_Test1();
+	removeChild(t7_ans1);
+	addChild(t7_ans1r);
+}
+
+t7_ans2.addEventListener(MouseEvent.CLICK, clickT7Ans2);
+function clickT7Ans2(evt:MouseEvent): void {
+	t7_test2=1;
+	t7_Test2();
+	removeChild(t7_ans2);
+	addChild(t7_ans2r);
+}
+
+t7_ans3.addEventListener(MouseEvent.CLICK, clickT7Ans3);
+function clickT7Ans3(evt:MouseEvent): void {
+	t7_test3=1;
+	t7_Test3();
+	removeChild(t7_ans3);
+	addChild(t7_ans3r);
+} 
+
+t7_ans4.addEventListener(MouseEvent.CLICK, clickT7Ans4);
+function clickT7Ans4(evt:MouseEvent): void {
+	t7_Vic=true;
+	t7_Test4();
+	t7_ans1.mouseEnabled=false;
+	t7_ans2.mouseEnabled=false;
+	t7_ans3.mouseEnabled=false;
+	removeChild(t7_ans4);
+	addChild(t7_ans4g);
+	t7_Victory();
+}
+
+t7_vict.addEventListener(MouseEvent.CLICK, clickT7vc);
+function clickT7vc(event:MouseEvent):void 
+{
+	if(proverka9==true && proverka7==true && proverka11==true){
+		removeChild(inf7n);
+		removeChild(fon7);
+		removeChild(t7_ans1);
+		removeChild(t7_ans2);
+		removeChild(t7_ans3);
+		spr_CA.mouseEnabled=true;
+		removeChild(t7_ans4g);
+		removeChild(t7_vict)
+		removeChild(m_A7);
+		removeChild(m_rg9);
+		removeChild(m_NA12);
+		addChildAt(m_rgd9,1);
+		addChild(m_A12);
+		addChild(m_F7);
+		addChild(inf7)}else if(proverka7==true){
+			removeChild(inf7n);
+			removeChild(fon7);
+			removeChild(t7_ans1);
+			removeChild(t7_ans2);
+			removeChild(t7_ans3);
+			removeChild(t7_ans4g);
+			removeChild(t7_vict)
+			removeChild(m_A7);
+			addChild(m_F7);
+			addChild(inf7)} 
+}
+
+//Задание №8 Наземный сегмент СДКМ
+
+function t8_Test1(){
+	if(t8_test2==1){
+	removeChild(t8_2r);
+	addChild(t8_2);
+	removeChild(t8_n)} else if(t8_test3==1){
+		removeChild(t8_3r);
+		addChild(t8_3);
+		removeChild(t8_n)}
+	}
+function t8_Test2(){
+	if(t8_test3==1){
+	removeChild(t8_3r);
+	addChild(t8_3);
+	t8_test3=0}
+}
+function t8_Test3(){
+	if(t8_test2==1){
+	removeChild(t8_2r);
+	addChild(t8_2);
+	t8_test2=0}
+}
+
+function t8_Victory(){
+	if (t8_Vic==true) {
+		proverka8=true;
+		addChild(t8_vict);
+		t8_vict.gotoAndPlay(1);}
+}
+
+t8_1.addEventListener(MouseEvent.CLICK, clickT8Ans1);
+function clickT8Ans1(evt:MouseEvent): void {
+	t8_Vic=true;t8_Victory();
+	t8_Test1();
+	t8_2.mouseEnabled=false;
+	t8_3.mouseEnabled=false;
+	removeChild(t8_1);
+	addChild(t8_1g);
+}
+
+t8_2.addEventListener(MouseEvent.CLICK, clickT8Ans2);
+function clickT8Ans2(evt:MouseEvent): void {
+	t8_test2=1;
+	t8_Test2();
+	removeChild(t8_2);
+	addChild(t8_2r);
+	addChild(t8_n);
+}
+
+t8_3.addEventListener(MouseEvent.CLICK, clickT8Ans3);
+function clickT8Ans3(evt:MouseEvent): void {
+	t8_test3=1;
+	t8_Test3();
+	removeChild(t8_3);
+	addChild(t8_3r);
+	addChild(t8_n);
+} 
+
+t8_vict.addEventListener(MouseEvent.CLICK, clickT8vc);
+function clickT8vc(event:MouseEvent):void 
+{
+if(proverka8==true){
+	removeChild(fon8);
+	removeChild(t8_1g);
+	removeChild(t8_2);
+	removeChild(t8_3);
+	removeChild(t8_vict)
+	removeChild(m_rg5);
+	removeChild(inf8n);
+	spr_CA.mouseEnabled=true;
+	removeChild(m_A8);
+	removeChild(m_NA9);
+	addChildAt(m_rgd5,1)
+	addChild(m_A9);
+	addChild(m_F8);
+	addChild(inf8);} 
+}
+
+//Задание №9 Космический сегмент СДКМ
+
+function t9_Victory(){
+	if(t9_Vic==6){proverka9=true;
+		fon9.addChild(t9_Vict);
+		t9_Vict.gotoAndPlay(1)}
+}
+
+t9_smg1.addEventListener(MouseEvent.CLICK, clickT9_smg1);
+function clickT9_smg1(evt:MouseEvent): void {
+	fon9.removeChild(t9_smg1);
+	fon9.addChildAt(t9_sg1,1);
+	t9_smg2.mouseEnabled = false;
+	t9_smg3.mouseEnabled = false;
+	t9_smg4.mouseEnabled = false;
+	t9_smg5.mouseEnabled = false;
+	t9_smg6.mouseEnabled = false;
+}
+t9_smg2.addEventListener(MouseEvent.CLICK, clickT9_smg2);
+function clickT9_smg2(evt:MouseEvent): void {
+	fon9.removeChild(t9_smg2);
+	fon9.addChildAt(t9_sg2,1);
+	t9_smg1.mouseEnabled = false;
+	t9_smg3.mouseEnabled = false;
+	t9_smg4.mouseEnabled = false;
+	t9_smg5.mouseEnabled = false;
+	t9_smg6.mouseEnabled = false;
+}
+t9_smg3.addEventListener(MouseEvent.CLICK, clickT9_smg3);
+function clickT9_smg3(evt:MouseEvent): void {
+	fon9.removeChild(t9_smg3);
+	fon9.addChildAt(t9_sg3,2);
+	t9_smg1.mouseEnabled = false;
+	t9_smg2.mouseEnabled = false;
+	t9_smg4.mouseEnabled = false;
+	t9_smg5.mouseEnabled = false;
+	t9_smg6.mouseEnabled = false;
+}
+t9_smg4.addEventListener(MouseEvent.CLICK, clickT9_smg4);
+function clickT9_smg4(evt:MouseEvent): void {
+	fon9.removeChild(t9_smg4);
+	fon9.addChildAt(t9_sg4,6);
+	t9_smg1.mouseEnabled = false;
+	t9_smg2.mouseEnabled = false;
+	t9_smg3.mouseEnabled = false;
+	t9_smg5.mouseEnabled = false;
+	t9_smg6.mouseEnabled = false;
+}
+t9_smg5.addEventListener(MouseEvent.CLICK, clickT9_smg5);
+function clickT9_smg5(evt:MouseEvent): void {
+	fon9.removeChild(t9_smg5);
+	fon9.addChildAt(t9_sg5,4);
+	t9_smg1.mouseEnabled = false;
+	t9_smg2.mouseEnabled = false;
+	t9_smg3.mouseEnabled = false;
+	t9_smg4.mouseEnabled = false;
+	t9_smg6.mouseEnabled = false;
+}
+t9_smg6.addEventListener(MouseEvent.CLICK, clickT9_smg6);
+function clickT9_smg6(evt:MouseEvent): void {
+	fon9.removeChild(t9_smg6);
+	fon9.addChildAt(t9_sg6,1);
+	t9_smg1.mouseEnabled = false;
+	t9_smg2.mouseEnabled = false;
+	t9_smg3.mouseEnabled = false;
+	t9_smg4.mouseEnabled = false;
+	t9_smg5.mouseEnabled = false;
+}
+
+t9_sg1.addEventListener(MouseEvent.CLICK, clickT9_sg1);
+function clickT9_sg1(evt:MouseEvent): void {
+	fon9.removeChild(t9_sg1);
+	fon9.addChildAt(t9_s1,1);
+	t9_smg2.mouseEnabled = true;
+	t9_smg3.mouseEnabled = true;
+	t9_smg4.mouseEnabled = true;
+	t9_smg5.mouseEnabled = true;
+	t9_Vic=t9_Vic+1;
+	t9_Victory();
+}
+t9_sg2.addEventListener(MouseEvent.CLICK, clickT9_sg2);
+function clickT9_sg2(evt:MouseEvent): void {
+	fon9.removeChild(t9_sg2);
+	fon9.addChildAt(t9_s2,1);
+	t9_smg1.mouseEnabled = true;
+	t9_smg3.mouseEnabled = true;
+	t9_smg4.mouseEnabled = true;
+	t9_smg5.mouseEnabled = true;
+	t9_Vic=t9_Vic+1;
+	t9_Victory();
+}
+t9_sg3.addEventListener(MouseEvent.CLICK, clickT9_sg3);
+function clickT9_sg3(evt:MouseEvent): void {
+	fon9.removeChild(t9_sg3);
+	fon9.addChildAt(t9_s3,2);
+	t9_smg2.mouseEnabled = true;
+	t9_smg1.mouseEnabled = true;
+	t9_smg4.mouseEnabled = true;
+	t9_smg5.mouseEnabled = true;
+	t9_Vic=t9_Vic+1;
+	t9_Victory();
+}
+t9_sg4.addEventListener(MouseEvent.CLICK, clickT9_sg4);
+function clickT9_sg4(evt:MouseEvent): void {
+	fon9.removeChild(t9_sg4);
+	fon9.addChildAt(t9_s4,6);
+	t9_smg2.mouseEnabled = true;
+	t9_smg3.mouseEnabled = true;
+	t9_smg1.mouseEnabled = true;
+	t9_smg5.mouseEnabled = true;
+	t9_Vic=t9_Vic+1;
+	t9_Victory();
+}
+t9_sg5.addEventListener(MouseEvent.CLICK, clickT9_sg5);
+function clickT9_sg5(evt:MouseEvent): void {
+	fon9.removeChild(t9_sg5);
+	fon9.addChildAt(t9_s5,4);
+	t9_smg6.mouseEnabled = true;
+	t9_smg2.mouseEnabled = true;
+	t9_smg3.mouseEnabled = true;
+	t9_smg4.mouseEnabled = true;
+	t9_smg1.mouseEnabled = true;
+	t9_Vic=t9_Vic+1;
+	t9_Victory();
+}
+t9_sg6.addEventListener(MouseEvent.CLICK, clickT9_sg6);
+function clickT9_sg6(evt:MouseEvent): void {
+	fon9.removeChild(t9_sg6);
+	fon9.addChildAt(t9_s6,1);
+	t9_smg2.mouseEnabled = true;
+	t9_smg3.mouseEnabled = true;
+	t9_smg4.mouseEnabled = true;
+	t9_smg1.mouseEnabled = true;
+	t9_smg5.mouseEnabled = true;
+	t9_Vic=t9_Vic+1;
+	t9_Victory();
+}
+
+t9_Vict.addEventListener(MouseEvent.CLICK, clickT9vc);
+function clickT9vc(event:MouseEvent):void {	
+	if(proverka9==true && proverka7==true && proverka11==true){
+	removeChild(fon9);
+	removeChild(inf9n);
+	removeChild(m_A9);
+	removeChild(m_rg9);
+	removeChild(m_NA12);
+	addChildAt(m_rgd9,1)
+	spr_CA.mouseEnabled=true;;
+	addChild(m_A12);
+	addChild(m_F9);
+	addChild(inf9)}else if(proverka9==true){
+		removeChild(fon9);
+		removeChild(inf9n);
+		spr_CA.mouseEnabled=true;
+		removeChild(m_A9);
+		addChild(m_F9)
+		addChild(inf9)}
+}
+
+//Задание №10 НАП ВС РФ
+
+function t10_Test1(){
+	if(t10_test2==1){
+	removeChild(t10_ans2r);
+	addChild(t10_ans2);
+	t10_test2=0}else if(t10_test4==1){
+		removeChild(t10_ans4r);
+		addChild(t10_ans4);
+		t10_test4=0}
+	}
+function t10_Test2(){
+	if(t10_test1==1){
+	removeChild(t10_ans1r);
+	addChild(t10_ans1);
+	t10_test1=0;}else if(t10_test4==1){
+		removeChild(t10_ans4r);
+		addChild(t10_ans4);
+		t10_test4=0;}
+}
+function t10_Test3(){
+	if(t10_test1==1){
+	removeChild(t10_ans1r);
+	addChild(t10_ans1);}else if(t10_test2==1){
+		removeChild(t10_ans2r);
+		addChild(t10_ans2);}else if(t10_test4==1){
+			removeChild(t10_ans4r);
+			addChild(t10_ans4);
+		}
+}
+function t10_Test4(){
+	if(t10_test1==1){
+	removeChild(t10_ans1r);
+	addChild(t10_ans1);
+	t10_test1=0}else if(t10_test2==1){
+		removeChild(t10_ans2r);
+		addChild(t10_ans2);
+		t10_test2=0}
+}
+
+function t10_Victory(){
+	if (t10_Vic==true) {
+		proverka10=true;
+		addChild(t10_vict);
+		t10_vict.gotoAndPlay(1);}
+}
+
+t10_ans1.addEventListener(MouseEvent.CLICK, clickT10a1);
+function clickT10a1(evt:MouseEvent): void {
+	t10_test1=1;t10_Test1();
+	removeChild(t10_ans1);
+	addChild(t10_ans1r);
+}
+
+t10_ans2.addEventListener(MouseEvent.CLICK, clickT10a2);
+function clickT10a2(evt:MouseEvent): void {
+	t10_test2=1;t10_Test2();
+	removeChild(t10_ans2);
+	addChild(t10_ans2r);
+}
+
+t10_ans3.addEventListener(MouseEvent.CLICK, clickT10a3);
+function clickT10a3(evt:MouseEvent): void {
+	t10_Vic=true;t10_Victory();
+	t10_Test3();
+	t10_ans1.mouseEnabled = false;
+	t10_ans4.mouseEnabled = false;
+	t10_ans2.mouseEnabled = false;
+	removeChild(t10_ans3);
+	addChild(t10_ans3g);
+}
+
+t10_ans4.addEventListener(MouseEvent.CLICK, clickT10a4);
+function clickT10a4(evt:MouseEvent): void {
+	t10_test4=1;t10_Test4();
+	removeChild(t10_ans4);
+	addChild(t10_ans4r);
+}
+
+t10_vict.addEventListener(MouseEvent.CLICK, clickT10vc);
+function clickT10vc(event:MouseEvent):void {	
+	if(proverka10==true){
+	removeChild(fon10);
+	removeChild(t10_ans4);
+	removeChild(t10_ans3g);
+	removeChild(t10_ans2);
+	removeChild(t10_ans1);
+	removeChild(t10_vict)
+	removeChild(m_rg7);
+	removeChild(inf10n);
+	removeChild(m_A10);
+	spr_CA.mouseEnabled=true;
+	removeChild(m_NA11);
+	addChildAt(m_rgd7,1)
+	addChild(m_A11);
+	addChild(m_F10);
+	addChild(inf10);} 
+}
+
+//Задание №11 НАП Гражданский
+
+function t11_Test1(){
+	if(t11_test2==1){
+	removeChild(t11_num2r);
+	addChild(t11_num2);
+	t11_test2=0}else if(t11_test3==1){
+		removeChild(t11_num3r);
+		addChild(t11_num3);
+		t11_test3=0}
+	}
+function t11_Test2(){
+	if(t11_test1==1){
+	removeChild(t11_num1r);
+	addChild(t11_num1);
+	t11_test1=0;}else if(t11_test3==1){
+		removeChild(t11_num3r);
+		addChild(t11_num3);
+		t11_test3=0}
+}
+function t11_Test3(){
+	if(t11_test1==1){
+	removeChild(t11_num1r);
+	addChild(t11_num1);
+	t11_test1=0}else if(t11_test2==1){
+		removeChild(t11_num2r);
+		addChild(t11_num2);
+		t11_test2=0}
+}
+function t11_Test4(){
+	if(t11_test1==1){
+	removeChild(t11_num1r);
+	addChild(t11_num1);}else if(t11_test2==1){
+		removeChild(t11_num2r);
+		addChild(t11_num2);}else if(t11_test3==1){
+			removeChild(t11_num3r);
+			addChild(t11_num3)}
+}
+		
+function t11_Victory(){
+	if (t11_Vic==true) {
+		proverka11=true;
+		addChild(t11_vict);
+		t11_vict.gotoAndPlay(1);}
+}
+
+t11_num1.addEventListener(MouseEvent.CLICK, clickT11Num1);
+function clickT11Num1(evt:MouseEvent): void {
+	t11_test1=1;
+	t11_Test1();
+	removeChild(t11_num1);
+	addChild(t11_num1r);
+}
+
+t11_num2.addEventListener(MouseEvent.CLICK, clickT11Num2);
+function clickT11Num2(evt:MouseEvent): void {
+	t11_test2=1;
+	t11_Test2();
+	removeChild(t11_num2);
+	addChild(t11_num2r);
+}
+
+t11_num3.addEventListener(MouseEvent.CLICK, clickT11Num3);
+function clickT11Num3(evt:MouseEvent): void {
+	t11_test3=1;
+	t11_Test3();
+	removeChild(t11_num3);
+	addChild(t11_num3r);
+} 
+
+t11_num4.addEventListener(MouseEvent.CLICK, clickT11Num4);
+function clickT11Num4(evt:MouseEvent): void {
+	t11_Vic=true;t11_Victory();
+	t11_Test4();
+	t11_num1.mouseEnabled=false;
+	t11_num2.mouseEnabled=false;
+	t11_num3.mouseEnabled=false;
+	removeChild(t11_num4);
+	addChild(t11_num4g);
+}
+
+t11_vict.addEventListener(MouseEvent.CLICK, clickT11vc);
+function clickT11vc(event:MouseEvent):void {	
+	if(proverka9==true && proverka7==true && proverka11==true){
+		removeChild(fon11);
+		removeChild(t11_num1);
+		removeChild(t11_num2);
+		removeChild(t11_num3);
+		removeChild(t11_num4g);
+		removeChild(t11_vict);
+		spr_CA.mouseEnabled=true;
+		removeChild(inf11n);
+		removeChild(m_A11);
+		removeChild(m_rg9);
+		removeChild(m_NA12);
+		addChildAt(m_rgd9,1);
+		addChild(m_A12);
+		addChild(m_F11);
+		addChild(inf11)} else if(proverka11==true){
+			removeChild(fon11);
+			removeChild(t11_num1);
+			removeChild(t11_num2);
+			removeChild(t11_num3);
+			removeChild(t11_num4g);
+			spr_CA.mouseEnabled=true;
+			removeChild(t11_vict)
+			removeChild(inf11n);
+			removeChild(m_A11);
+			addChild(m_F11);
+			addChild(inf11);} 
+}
+
+//Задание №12 Система Глонасс
+
+function t12_Test2(){
+	if(t12_test1==1){
+	removeChild(t12_ans1r);
+	addChild(t12_ans1)}
+}
+
+function t12_Victory(){
+	if (t12_Vic==true) {
+		proverka12=true;
+		addChild(t12_vict);
+		t12_vict.gotoAndPlay(1);}
+}
+
+t12_ans1.addEventListener(MouseEvent.CLICK, clickT12Ans1);
+function clickT12Ans1(evt:MouseEvent): void {
+	t12_test1=1;
+	removeChild(t12_ans1);
+	addChild(t12_ans1r);
+}
+
+t12_ans2.addEventListener(MouseEvent.CLICK, clickT12Ans2);
+function clickT12Ans2(evt:MouseEvent): void {
+	t12_Test2();
+	t12_Vic=true;
+	t12_ans1.mouseEnabled=false;
+	removeChild(t12_ans2);
+	addChild(t12_ans2g);
+	t12_Victory();
+}
+
+t12_vict.addEventListener(MouseEvent.CLICK, clickT12vc);
+function clickT12vc(event:MouseEvent):void {	
+	if(proverka12==true){
+	removeChild(inf12n);
+	removeChild(m_A12);
+	removeChild(fon12);
+	removeChild(t12_ans1);
+	spr_CA.mouseEnabled=true;
+	removeChild(t12_ans2g);
+	removeChild(t12_vict);
+	addChild(m_F12);
+	addChild(inf12);
+	addChild(te_cont)} 
+}
+//_____________________________________________________________________________________________
+
+
+
+//Активация финальных кнопок
+m_F1.addEventListener(MouseEvent.CLICK, clickF1);
+	function clickF1(event:MouseEvent):void {
+			if(addChild(inf2)){
+				removeChild(inf2);
+				addChild(inf1)} else if(addChild(inf3)){
+					removeChild(inf3);
+					addChild(inf1)} else if(addChild(inf4)){
+						removeChild(inf4);
+						addChild(inf1)} else if(addChild(inf5)){
+							removeChild(inf5);
+							addChild(inf1)} else if(addChild(inf6)){
+								removeChild(inf6);
+								addChild(inf1)} else if(addChild(inf7)){
+									removeChild(inf7);
+									addChild(inf1)} else if(addChild(inf8)){
+										removeChild(inf8);
+										addChild(inf1)} else if(addChild(inf9)){
+											removeChild(inf9);
+											addChild(inf1)} else if(addChild(inf10)){
+												removeChild(inf10);
+												addChild(inf1)} else if(addChild(inf11)){
+													removeChild(inf11);
+													addChild(inf1)} else if(addChild(inf12)){
+														removeChild(inf12);
+														addChild(inf1)} 
+}
+
+m_F2.addEventListener(MouseEvent.CLICK, clickF2);
+	function clickF2(event:MouseEvent):void {
+		if(addChild(inf1)){
+			removeChild(inf1);
+			addChild(inf8)} else if(addChild(inf3)){
+					removeChild(inf3);
+					addChild(inf2)} else if(addChild(inf4)){
+						removeChild(inf4);
+						addChild(inf2)} else if(addChild(inf5)){
+							removeChild(inf5);
+							addChild(inf2)} else if(addChild(inf6)){
+								removeChild(inf6);
+								addChild(inf2)} else if(addChild(inf7)){
+									removeChild(inf7);
+									addChild(inf2)} else if(addChild(inf8)){
+										removeChild(inf8);
+										addChild(inf2)} else if(addChild(inf9)){
+											removeChild(inf9);
+											addChild(inf2)} else if(addChild(inf10)){
+												removeChild(inf10);
+												addChild(inf2)} else if(addChild(inf11)){
+													removeChild(inf11);
+													addChild(inf2)} else if(addChild(inf12)){
+														removeChild(inf12);
+														addChild(inf2)} 
+}
+
+m_F3.addEventListener(MouseEvent.CLICK, clickF3);
+	function clickF3(event:MouseEvent):void {
+		if(addChild(inf1)){
+			removeChild(inf1);
+			addChild(inf3)} else if(addChild(inf2)){
+				removeChild(inf2);
+				addChild(inf3)} else if(addChild(inf4)){
+						removeChild(inf4);
+						addChild(inf3)} else if(addChild(inf5)){
+							removeChild(inf5);
+							addChild(inf3)} else if(addChild(inf6)){
+								removeChild(inf6);
+								addChild(inf3)} else if(addChild(inf7)){
+									removeChild(inf7);
+									addChild(inf3)} else if(addChild(inf8)){
+										removeChild(inf8);
+										addChild(inf3)} else if(addChild(inf9)){
+											removeChild(inf9);
+											addChild(inf3)} else if(addChild(inf10)){
+												removeChild(inf10);
+												addChild(inf3)} else if(addChild(inf11)){
+													removeChild(inf11);
+													addChild(inf3)} else if(addChild(inf12)){
+														removeChild(inf12);
+														addChild(inf3)} 
+}
+
+m_F4.addEventListener(MouseEvent.CLICK, clickF4);
+	function clickF4(event:MouseEvent):void {
+		if(addChild(inf1)){
+			removeChild(inf1);
+			addChild(inf4)} else if(addChild(inf2)){
+				removeChild(inf2);
+				addChild(inf4)} else if(addChild(inf3)){
+					removeChild(inf3);
+					addChild(inf4)} else if(addChild(inf5)){
+							removeChild(inf5);
+							addChild(inf4)} else if(addChild(inf6)){
+								removeChild(inf6);
+								addChild(inf4)} else if(addChild(inf7)){
+									removeChild(inf7);
+									addChild(inf4)} else if(addChild(inf8)){
+										removeChild(inf8);
+										addChild(inf4)} else if(addChild(inf9)){
+											removeChild(inf9);
+											addChild(inf4)} else if(addChild(inf10)){
+												removeChild(inf10);
+												addChild(inf4)} else if(addChild(inf11)){
+													removeChild(inf11);
+													addChild(inf4)} else if(addChild(inf12)){
+														removeChild(inf12);
+														addChild(inf4)} 
+}
+
+m_F5.addEventListener(MouseEvent.CLICK, clickF5);
+	function clickF5(event:MouseEvent):void {
+		if(addChild(inf1)){
+			removeChild(inf1);
+			addChild(inf5)} else if(addChild(inf2)){
+				removeChild(inf2);
+				addChild(inf5)} else if(addChild(inf3)){
+					removeChild(inf3);
+					addChild(inf5)} else if(addChild(inf4)){
+						removeChild(inf4);
+						addChild(inf5)} else if(addChild(inf6)){
+								removeChild(inf6);
+								addChild(inf5)} else if(addChild(inf7)){
+									removeChild(inf7);
+									addChild(inf5)} else if(addChild(inf8)){
+										removeChild(inf8);
+										addChild(inf5)} else if(addChild(inf9)){
+											removeChild(inf9);
+											addChild(inf5)} else if(addChild(inf10)){
+												removeChild(inf10);
+												addChild(inf5)} else if(addChild(inf11)){
+													removeChild(inf11);
+													addChild(inf5)} else if(addChild(inf12)){
+														removeChild(inf12);
+														addChild(inf5)} 
+}
+
+m_F6.addEventListener(MouseEvent.CLICK, clickF6);
+	function clickF6(event:MouseEvent):void {
+		if(addChild(inf1)){
+			removeChild(inf1);
+			addChild(inf6)} else if(addChild(inf2)){
+				removeChild(inf2);
+				addChild(inf6)} else if(addChild(inf3)){
+					removeChild(inf3);
+					addChild(inf6)} else if(addChild(inf4)){
+						removeChild(inf4);
+						addChild(inf6)} else if(addChild(inf5)){
+							removeChild(inf5);
+							addChild(inf6)} else if(addChild(inf7)){
+									removeChild(inf7);
+									addChild(inf6)} else if(addChild(inf8)){
+										removeChild(inf8);
+										addChild(inf6)} else if(addChild(inf9)){
+											removeChild(inf9);
+											addChild(inf6)} else if(addChild(inf10)){
+												removeChild(inf10);
+												addChild(inf6)} else if(addChild(inf11)){
+													removeChild(inf11);
+													addChild(inf6)} else if(addChild(inf12)){
+														removeChild(inf12);
+														addChild(inf6)} 
+}
+
+m_F7.addEventListener(MouseEvent.CLICK, clickF7);
+	function clickF7(event:MouseEvent):void {
+		if(addChild(inf1)){
+			removeChild(inf1);
+			addChild(inf7)} else if(addChild(inf2)){
+				removeChild(inf2);
+				addChild(inf7)} else if(addChild(inf3)){
+					removeChild(inf3);
+					addChild(inf7)} else if(addChild(inf4)){
+						removeChild(inf4);
+						addChild(inf7)} else if(addChild(inf5)){
+							removeChild(inf5);
+							addChild(inf7)} else if(addChild(inf6)){
+								removeChild(inf6);
+								addChild(inf7)} else if(addChild(inf8)){
+										removeChild(inf8);
+										addChild(inf7)} else if(addChild(inf9)){
+											removeChild(inf9);
+											addChild(inf7)} else if(addChild(inf10)){
+												removeChild(inf10);
+												addChild(inf7)} else if(addChild(inf11)){
+													removeChild(inf11);
+													addChild(inf7)} else if(addChild(inf12)){
+														removeChild(inf12);
+														addChild(inf7)} 
+}
+
+m_F8.addEventListener(MouseEvent.CLICK, clickF8);
+	function clickF8(event:MouseEvent):void {
+		if(addChild(inf1)){
+			removeChild(inf1);
+			addChild(inf8)} else if(addChild(inf2)){
+				removeChild(inf2);
+				addChild(inf8)} else if(addChild(inf3)){
+					removeChild(inf3);
+					addChild(inf8)} else if(addChild(inf4)){
+						removeChild(inf4);
+						addChild(inf8)} else if(addChild(inf5)){
+							removeChild(inf5);
+							addChild(inf8)} else if(addChild(inf6)){
+								removeChild(inf6);
+								addChild(inf8)} else if(addChild(inf7)){
+									removeChild(inf7);
+									addChild(inf8)} else if(addChild(inf9)){
+											removeChild(inf9);
+											addChild(inf8)} else if(addChild(inf10)){
+												removeChild(inf10);
+												addChild(inf8)} else if(addChild(inf11)){
+													removeChild(inf11);
+													addChild(inf8)} else if(addChild(inf12)){
+														removeChild(inf12);
+														addChild(inf12)} 
+}
+
+m_F9.addEventListener(MouseEvent.CLICK, clickF9);
+	function clickF9(event:MouseEvent):void {
+		if(addChild(inf1)){
+			removeChild(inf1);
+			addChild(inf9)} else if(addChild(inf2)){
+				removeChild(inf2);
+				addChild(inf9)} else if(addChild(inf3)){
+					removeChild(inf3);
+					addChild(inf9)} else if(addChild(inf4)){
+						removeChild(inf4);
+						addChild(inf9)} else if(addChild(inf5)){
+							removeChild(inf5);
+							addChild(inf9)} else if(addChild(inf6)){
+								removeChild(inf6);
+								addChild(inf9)} else if(addChild(inf7)){
+									removeChild(inf7);
+									addChild(inf9)} else if(addChild(inf8)){
+										removeChild(inf8);
+										addChild(inf9)} else if(addChild(inf10)){
+												removeChild(inf10);
+												addChild(inf9)} else if(addChild(inf11)){
+													removeChild(inf11);
+													addChild(inf9)} else if(addChild(inf12)){
+														removeChild(inf12);
+														addChild(inf9)} 
+}
+m_F10.addEventListener(MouseEvent.CLICK, clickF10);
+	function clickF10(event:MouseEvent):void {
+		if(addChild(inf1)){
+			removeChild(inf1);
+			addChild(inf10)} else if(addChild(inf2)){
+				removeChild(inf2);
+				addChild(inf10)} else if(addChild(inf3)){
+					removeChild(inf3);
+					addChild(inf10)} else if(addChild(inf4)){
+						removeChild(inf4);
+						addChild(inf10)} else if(addChild(inf5)){
+							removeChild(inf5);
+							addChild(inf10)} else if(addChild(inf6)){
+								removeChild(inf6);
+								addChild(inf10)} else if(addChild(inf7)){
+									removeChild(inf7);
+									addChild(inf10)} else if(addChild(inf8)){
+										removeChild(inf8);
+										addChild(inf10)} else if(addChild(inf9)){
+											removeChild(inf9);
+											addChild(inf10)} else if(addChild(inf11)){
+													removeChild(inf11);
+													addChild(inf10)} else if(addChild(inf12)){
+														removeChild(inf12);
+														addChild(inf10)} 
+}
+
+m_F11.addEventListener(MouseEvent.CLICK, clickF11);
+	function clickF11(event:MouseEvent):void {
+		if(addChild(inf1)){
+			removeChild(inf1);
+			addChild(inf11)} else if(addChild(inf2)){
+				removeChild(inf2);
+				addChild(inf11)} else if(addChild(inf3)){
+					removeChild(inf3);
+					addChild(inf11)} else if(addChild(inf4)){
+						removeChild(inf4);
+						addChild(inf11)} else if(addChild(inf5)){
+							removeChild(inf5);
+							addChild(inf11)} else if(addChild(inf6)){
+								removeChild(inf6);
+								addChild(inf11)} else if(addChild(inf7)){
+									removeChild(inf7);
+									addChild(inf11)} else if(addChild(inf8)){
+										removeChild(inf8);
+										addChild(inf11)} else if(addChild(inf9)){
+											removeChild(inf9);
+											addChild(inf11)} else if(addChild(inf10)){
+												removeChild(inf10);
+												addChild(inf11)} else if(addChild(inf12)){
+														removeChild(inf12);
+														addChild(inf11)} 
+}
+
+m_F12.addEventListener(MouseEvent.CLICK, clickF12);
+	function clickF12(event:MouseEvent):void {
+		if(addChild(inf1)){
+			removeChild(inf1);
+			addChild(inf12);
+			addChild(te_cont)} else if(addChild(inf2)){
+				removeChild(inf2);
+				addChild(inf12);
+				addChild(te_cont)} else if(addChild(inf3)){
+					removeChild(inf3);
+					addChild(inf12);
+					addChild(te_cont)} else if(addChild(inf4)){
+						removeChild(inf4);
+						addChild(inf12);
+						addChild(te_cont)} else if(addChild(inf5)){
+							removeChild(inf5);
+							addChild(inf12);
+							addChild(te_cont)} else if(addChild(inf6)){
+								removeChild(inf6);
+								addChild(inf12);
+								addChild(te_cont)} else if(addChild(inf7)){
+									removeChild(inf7);
+									addChild(inf12);
+									addChild(te_cont)} else if(addChild(inf8)){
+										removeChild(inf8);
+										addChild(inf12);
+										addChild(te_cont)} else if(addChild(inf9)){
+											removeChild(inf9);
+											addChild(inf12);
+											addChild(te_cont)} else if(addChild(inf10)){
+												removeChild(inf10);
+												addChild(inf12);
+												addChild(te_cont)} else if(addChild(inf11)){
+													removeChild(inf11);
+													addChild(inf12);
+													addChild(te_cont)} 
+}
+
+
+
+//Конец игры
+
+te_cont.addEventListener(MouseEvent.CLICK, tect);
+	function tect(event:MouseEvent):void {
+		addChild(fon_te);
+		addChild(but_te);
+		removeChild(te_cont);
+}
+
+but_te.addEventListener(MouseEvent.CLICK, bt);
+	function bt(event:MouseEvent):void {
+		gotoAndPlay("The End","Final");
+}
