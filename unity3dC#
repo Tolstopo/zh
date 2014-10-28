@@ -1,0 +1,319 @@
+using UnityEngine;
+using System.Collections;
+
+public class MoveAndSelectedObjects : MonoBehaviour {
+    private GameObject SaveSelectedObject;
+    private GameObject SaveSelectedObjectNPC;
+    private Vector3 destination = new Vector3();
+    private Vector3 lastDestination = new Vector3();// Место назначения
+    private Vector3 target = new Vector3();
+    private RaycastHit hit;
+
+    // Характеристики отрядов
+    private Character character;
+    public static string nameCharacter, nameCharacterNPC;
+    public float speedCharacter, speedCharacterNPC;
+    public static float curHealthCharacter, curHealthCharacterNPC;
+    public static int maxHealthCharacter, maxHealthCharacterNPC;
+    public static float CurEnduranceCharacter;
+    public static float MaxEnduranceCharacter;
+
+    // Сохранение пути
+    private Vector3 transfer1, transfer2, transfer3;
+    private GameObject transferArcher, transferBarbarian, transferHorseman;
+    private float speedArcher, speedBarbarian, speedHorseman;
+    private bool flag1, flag2, flag3;
+    private bool proverka;
+
+    // Атака
+    private float coolDown;
+    private float attackTimer;
+
+    // Сохранение атаки
+    private Vector3 pointArcher, pointBarbarian, pointHorseman;
+
+    // Энергия
+    private bool flagEn1;
+    private float distance1, distance2, distance3;
+
+    // Empty
+    private GameObject Empty;
+    private Empty empty;
+    private string nameEmpty;
+    private Vector3 destinationEmpty = new Vector3(0,-30,0);
+    private bool flagEmpty;
+    private Vector3 transferEmpty;
+
+	void Start () {
+        Empty = GameObject.Find("Empty");
+
+        //Установка начального значения атаки
+        attackTimer = 0;
+        if (coolDown == 0){
+            coolDown = 2.0f;
+        }
+	}
+	
+	void Update () {
+        SelectedObjectTap();
+        MouseClick();
+        Move();
+        MoveTransfer();
+        SwitchEndurance();
+        Damage();
+	}
+
+    // Выводим с помощью ГУИ характеристики отрядов на экран
+    void OnGUI() {
+        if (SelectedObject){
+            GUILayout.Label("Name: " + nameCharacter);
+            GUILayout.Label("Health: " + curHealthCharacter);
+            GUILayout.Label("Move Speed: " + speedCharacter);
+            GUILayout.Label("Endurance: " + CurEnduranceCharacter);
+        }
+        if (SelectedObjectNPC) {
+            GUILayout.Label("Name NPC: " + nameCharacterNPC);
+            GUILayout.Label("Health NPC: " + curHealthCharacterNPC);
+            GUILayout.Label("Move Speed NPC: " + speedCharacterNPC);
+        }
+    }
+            
+    public GameObject SelectedObject{
+        get{
+            return SaveSelectedObject;
+        }
+        set{
+            // Получим «старый» выбранный объект
+            GameObject goOld = SaveSelectedObject;
+            // Установим новый выбранный объект
+            SaveSelectedObject = value;
+            // Если выбранный объект не поменялся, просто выходим с метода
+            if (goOld == SaveSelectedObject){
+                return;
+            }
+            // Снимем выделение со старого выбранного объекта
+            if (goOld != null){
+                goOld.GetComponent<Bar>().enabled = false; // отключаем бар
+               goOld.renderer.material.color = Color.white;
+            }
+            // Выделим выбранный объект.
+            if (SaveSelectedObject != null){
+                SaveSelectedObject.gameObject.GetComponent<Bar>().enabled = true; // включаем бар
+                SaveSelectedObject.renderer.material.color = Color.green;
+            }   
+        }
+    }
+
+    public GameObject SelectedObjectNPC { 
+        get{
+            return SaveSelectedObjectNPC;
+        }
+        set { 
+            // Получим «старый» выбранный объект
+            GameObject goOldNPC = SaveSelectedObjectNPC;
+            // Установим новый выбранный объект
+            SaveSelectedObjectNPC = value;
+            // Если выбранный объект не поменялся, просто выходим с метода
+            if (goOldNPC == SaveSelectedObjectNPC){
+                return;
+            }
+            // Снимем выделение со старого выбранного объекта
+            if (goOldNPC != null){
+                //goOldNPC.GetComponent<Bar>().enabled = false; // отключаем бар
+                goOldNPC.renderer.material.color = Color.white;
+            }
+            // Выделим выбранный объект.
+            if (SaveSelectedObjectNPC != null){
+                //SaveSelectedObjectNPC.gameObject.GetComponent<Bar>().enabled = true; // включаем бар
+                SaveSelectedObjectNPC.renderer.material.color = Color.red;
+            }
+        }
+    }
+
+    private void SelectedObjectTap(){
+        if (Input.GetMouseButton(0)) { 
+            // Преобразуем позицию мыши в луч исходящий от камеры
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            // Найдем пересечение луча с любым объектом в сцене
+            if (Physics.Raycast(ray, out hit, 10000)) {
+                // Только, если объекту присвоен тег Игрок, при чем проверка идет на соприкосновение с коллайдером
+                if (hit.collider.gameObject.tag == "Player") {
+                    //получаем характеристики
+                    getCharacter();
+                    //сохраняем в цель координаты
+                    target = hit.point;
+
+                    flagEn1 = true; // выносливость
+
+                    // Определим GameObject, который соответствует найденному объекту типа «RaycastHit»
+                    GameObject rayCastedGO;
+                    //GameObject
+                    rayCastedGO = hit.collider.gameObject;
+                    // Установим найденный объект, как выделенный
+                    this.SelectedObject = rayCastedGO;
+                }
+                if (hit.collider.gameObject.tag == "npc") {
+                    getCharacter();
+                    GameObject rayCastedGONPC = hit.collider.gameObject;
+                    this.SelectedObjectNPC = rayCastedGONPC;
+                }else{
+                    SelectedObjectNPC = null;  //убираем выделение с противника
+                }
+            }
+        } else if (Input.GetMouseButton(1)){
+            this.SelectedObject = Empty;
+            getCharacterEmpty();
+          }
+    }
+
+    public void MouseClick(){
+        if (Input.GetMouseButton(0)){
+            Ray ray2 = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray2, out hit, 10000)) {
+                destination = hit.point;
+            } 
+        }
+        if (Input.GetMouseButton(1)){
+            destination = destinationEmpty;
+        }
+    } 
+
+        private void Move() {
+            if (target != destination) {
+                if (nameCharacter == "ArcherPL") {
+                    flag1 = true;
+                    transferArcher = this.SelectedObject;
+                    transfer1 = destination;
+                    speedArcher = speedCharacter;
+                    if (Vector3.Distance(transferArcher.transform.position, pointArcher) < 3) {
+                        Debug.Log("ddd");
+                    }
+                }
+                if (nameCharacter == "BarbarianPL") {
+                    flag2 = true;
+                    transferBarbarian = this.SelectedObject;
+                    transfer2 = destination;
+                    speedBarbarian = speedCharacter;
+                }
+                if (nameCharacter == "HorsemanPL") {
+                    flag3 = true;
+                    transferHorseman = this.SelectedObject;
+                    transfer3 = destination;
+                    speedHorseman = speedCharacter;
+                    if (Vector3.Distance(transferHorseman.transform.position, pointHorseman) < 3) {
+                        Debug.Log("ddd");
+                    }
+                }
+                if (nameEmpty == "Empty") {
+                    flagEmpty = true;
+                    transferEmpty = destination;
+                }
+            }else{
+                destination = target;                
+            }
+        }
+
+    private void MoveTransfer() { // Запоминание пути
+        if (flag1 == true) { 
+            transferArcher.transform.position = Vector3.MoveTowards(transferArcher.transform.position, transfer1, speedArcher);
+        }
+        if (flag2 == true) { 
+            transferBarbarian.transform.position = Vector3.MoveTowards(transferBarbarian.transform.position, transfer2, speedBarbarian);
+        }
+        if (flag3 == true) { 
+            transferHorseman.transform.position = Vector3.MoveTowards(transferHorseman.transform.position, transfer3, speedHorseman);
+            if (Vector3.Distance(transferHorseman.transform.position, pointHorseman) < 3){
+                Debug.Log("ddd");
+            }
+        }
+        if (flagEmpty == true) {
+            Empty.transform.position = transferEmpty;
+        }
+    }
+
+    // Получаем характеристики отрядов
+    public void getCharacter(){
+        character = hit.rigidbody.GetComponent<Character>();
+        if (SelectedObject && hit.rigidbody.GetComponent<Character>() && hit.collider.gameObject.tag == "Player"){
+            nameCharacter = character.nameSoldier;
+            speedCharacter = character.moveSpeed;
+            curHealthCharacter = character.CurHealth;
+            maxHealthCharacter = character.MaxHealth;
+            CurEnduranceCharacter = character.CurEndurance;
+            MaxEnduranceCharacter = character.MaxEndurance;
+        } 
+        if (SelectedObjectNPC && hit.rigidbody.GetComponent<Character>() && hit.collider.gameObject.tag == "npc"){
+            nameCharacterNPC = character.nameSoldier;
+            speedCharacterNPC = character.moveSpeed;
+            curHealthCharacterNPC = character.CurHealth;
+            maxHealthCharacterNPC = character.MaxHealth;
+        }
+    }
+
+    private void getCharacterEmpty() {
+        empty = this.SelectedObject.GetComponent<Empty>();
+        nameEmpty = empty.name;
+    }
+
+    private void SwitchEndurance() { // Изменение энергии
+        if (flagEn1 == true) { 
+            if (nameCharacter == "ArcherPL") {
+                distance1 = Vector3.Distance(target, destination);
+            }
+            if (nameCharacter == "BarbarianPL") {
+                distance2 = Vector3.Distance(target, destination);
+            }
+            if (nameCharacter == "HorsemanPL") {
+                if (transform.position != destination) { 
+                    distance3 = distance3 + Vector3.Distance(transform.position, destination);
+                } else if(transform.position == destination){
+                    distance3 = 0;
+                }
+            }
+        }
+    }
+
+    private void Damage() {
+        // Выдерживаем паузу атаки
+        if (attackTimer > 0)
+            attackTimer -= Time.deltaTime;
+
+        // Пауза атаки закончилась, на всякий случай обнулить результат
+        if (attackTimer < 0)
+            attackTimer = 0;
+
+        // Урон
+        if (attackTimer == 0) { 
+            if(SelectedObjectNPC && (Vector3.Distance(SelectedObject.transform.position, SelectedObjectNPC.transform.position) < 10f)){
+                if (nameCharacter == "BarbarianPL") {
+                    pointBarbarian = this.SelectedObjectNPC.transform.position;
+                    character.CurHealth -= 10;
+                    curHealthCharacterNPC = character.CurHealth;
+                    if (character.CurHealth <= 0){
+                        Destroy(SelectedObjectNPC);
+                    }
+                }
+                if (nameCharacter == "HorsemanPL") {
+                    pointHorseman = this.SelectedObjectNPC.transform.position;
+                    character.CurHealth -= 15;
+                    curHealthCharacterNPC = character.CurHealth;
+                    if (character.CurHealth <= 0){
+                        Destroy(SelectedObjectNPC);
+                    }
+                }
+            }
+            if(SelectedObjectNPC && (Vector3.Distance(SelectedObject.transform.position, SelectedObjectNPC.transform.position) < 50f)){
+                if (nameCharacter == "ArcherPL") {
+                    pointArcher = this.SelectedObjectNPC.transform.position;
+                    character.CurHealth -= 13;
+                    curHealthCharacterNPC = character.CurHealth;
+                    if (character.CurHealth <= 0){
+                        Destroy(SelectedObjectNPC);
+                    }
+                }
+            }
+            attackTimer = coolDown;
+        }
+    }
+
+}
